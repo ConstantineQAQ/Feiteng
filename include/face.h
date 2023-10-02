@@ -17,29 +17,45 @@
 
 namespace Feiteng {
 
-class Face {
-
+// 摄像头对象
+class Camera {
 public:
-    typedef std::shared_ptr<Face> ptr;
-    void detectFace(); // 检测人脸
-    void resizeFace(); // 调整人脸大小
-    cv::Mat getFace() const { return m_frame; }
-    cv::Mat getGrayFace() const { return m_grayframe; }
-    std::vector<cv::Rect> getFaces() const { return m_faces; }
-    ~Face();
+    typedef std::shared_ptr<Camera> ptr;
+    void openCamera(); // 打开摄像头
+    cv::VideoCapture getCamera() const { return m_cap; } 
 private:
-    cv::Mat m_frame ,m_grayframe; // 人脸图像，从摄像头采集的数据
-    std::shared_ptr<cv::VideoCapture> m_cap; // 摄像头
-    std::shared_ptr<cv::CascadeClassifier> m_face_cascade; // 人脸检测器
-    std::vector<cv::Rect> m_faces; // 人脸矩形框
+    cv::VideoCapture m_cap; // 摄像头
 };
 
-class FaceInfo { 
+// 图像原始数据
+class Face {
+public:
+    typedef std::shared_ptr<Face> ptr;
+    void getRawFrame(); // 检测人脸
+    cv::Mat getFace() const { return m_frame; }
+    cv::Mat getGrayFace() const { return m_grayframe; }
+    virtual ~Face() {}
+    virtual void detectFace() {}
+    Face(); 
+protected:
+    cv::Mat m_frame ,m_grayframe; // 图像，从摄像头采集的数据
+    Camera::ptr m_camera; // 摄像头
+};
+
+
+// 人脸详细信息
+class FaceInfo : public Face{ 
 public:
     typedef std::shared_ptr<FaceInfo> ptr;
+    void faceRecorde(int number = 10); // 人脸录入
+    virtual void detectFace(); // 人脸检测
+    FaceInfo(std::string label = "unknown");
+    virtual ~FaceInfo() {}
 private:
-    Face::ptr m_face; // 人脸信息
-    std::string label; // 标签
+    std::string m_label; // 标签
+    std::vector<cv::Rect> m_faces; // 人脸矩形框
+    cv::Mat m_faceROI; // 人脸
+    std::shared_ptr<cv::CascadeClassifier> m_face_cascade; // 人脸级联器
 };
 
 // 人脸识别器

@@ -20,6 +20,7 @@
 
 #include "log.h"
 #include "thread.h"
+#include "database.h"
 
 namespace Feiteng {
     // 配置项的基类
@@ -42,6 +43,7 @@ namespace Feiteng {
         std::string m_name;
         std::string m_description;
     };
+
 
 // F from_type, T to_type
     template <class F, class T>
@@ -247,6 +249,35 @@ namespace Feiteng {
             std::stringstream ss;
             ss << node;
             return ss.str();
+        }
+    };
+
+    template<>
+    class LexicalCast<Feiteng::DatabaseConfig, std::string> {
+    public:
+        std::string operator()(const DatabaseConfig& v) {
+            YAML::Node node;
+            node["username"] = v.getUserName();
+            node["password"] = v.getPassword();
+            node["hostname"] = v.getConn();
+            node["type"] = v.getType();
+            std::stringstream ss;
+            ss << node;
+            return ss.str();
+        }
+    };
+
+    template<>
+    class LexicalCast<std::string, Feiteng::DatabaseConfig> {
+    public:
+        DatabaseConfig operator()(const std::string& v) {
+            YAML::Node node = YAML::Load(v);
+            DatabaseConfig config;
+            config.setUserName(node["username"].as<std::string>());
+            config.setPassword(node["password"].as<std::string>());
+            config.setConn(node["hostname"].as<std::string>());
+            config.setType(node["type"].as<std::string>());
+            return config;
         }
     };
 
