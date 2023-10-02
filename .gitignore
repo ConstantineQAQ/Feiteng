@@ -78,6 +78,7 @@ Thumbs.db
 
 /build
 /lib
+/conf
 
 # qtcreator generated files
 *.pro.user*
