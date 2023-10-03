@@ -1,15 +1,17 @@
 #include "face.h"
 
+static Feiteng::Logger::ptr g_logger = FEITENG_LOG_NAME("face");
+
 namespace Feiteng {
 
-static Feiteng::Logger::ptr g_logger = FEITENG_LOG_NAME("face");
+Face::Face()
+{
+    m_config.reset(new FaceConfig());
+}
 
 void Feiteng::Face::getRawFrame()
 {
-    m_camera->openCamera(); // 打开摄像头
-    m_camera->getCamera() >> m_frame; // 从摄像头采集数据
-    cv::imwrite("/home/kylin/Feiteng/frame.jpg", m_frame); // 测试用
-    FEITENG_LOG_INFO(g_logger) << "采集数据成功";
+    FEITENG_CAMERA() >> m_frame; // 采集数据
     cv::flip(m_frame, m_frame, 1); // 水平翻转
     cv::cvtColor(m_frame, m_grayframe, cv::COLOR_BGR2GRAY); // 转换为灰度图
     cv::fastNlMeansDenoising(m_grayframe, m_grayframe, 3, 7, 21); // 去噪
@@ -17,55 +19,146 @@ void Feiteng::Face::getRawFrame()
 }
 
 
-Face::Face()
-{
-    m_camera = std::make_shared<Camera>();
-}
-
-FaceInfo::FaceInfo(std::string label) : m_label(label) 
-                                                  ,Face(){
+FaceInfo::FaceInfo(std::string label) : m_label(label), Face() {
     m_face_cascade = std::make_shared<cv::CascadeClassifier>();
     m_face_cascade->load("/usr/local/share/opencv4/haarcascades/haarcascade_frontalface_alt.xml"); // 加载人脸级联器
 }
 
-void FaceInfo::faceRecorde(int number)
+double FaceInfo::getSSIM(cv::Mat img1, cv::Mat img2)
 {
+	// 常数，用于确保分母不为零
+	const double C1 = 6.5025, C2 = 58.5225;
+
+	// 将图像转换为浮点型
+	cv::Mat I1, I2;
+	img1.convertTo(I1, CV_32F);
+	img2.convertTo(I2, CV_32F);
+
+	// 计算图像的平方
+	cv::Mat I2_2 = I2.mul(I2);
+	cv::Mat I1_2 = I1.mul(I1);
+	cv::Mat I1_I2 = I1.mul(I2);
+
+	// 计算均值
+	cv::Mat mu1, mu2;
+	cv::GaussianBlur(I1, mu1, cv::Size(11, 11), 1.5);
+	cv::GaussianBlur(I2, mu2, cv::Size(11, 11), 1.5);
+
+	// 计算均值的平方
+	cv::Mat mu1_2 = mu1.mul(mu1);
+	cv::Mat mu2_2 = mu2.mul(mu2);
+	cv::Mat mu1_mu2 = mu1.mul(mu2);
+
+	// 计算方差
+	cv::Mat sigma1_2, sigma2_2, sigma12;
+	cv::GaussianBlur(I1_2, sigma1_2, cv::Size(11, 11), 1.5);
+	sigma1_2 -= mu1_2;
+	cv::GaussianBlur(I2_2, sigma2_2, cv::Size(11, 11), 1.5);
+	sigma2_2 -= mu2_2;
+	cv::GaussianBlur(I1_I2, sigma12, cv::Size(11, 11), 1.5);
+	sigma12 -= mu1_mu2;
+
+	// 计算SSIM的分子和分母
+	cv::Mat t1, t2, t3;
+	t1 = 2 * mu1_mu2 + C1;
+	t2 = 2 * sigma12 + C2;
+	t3 = t1.mul(t2);
+
+	t1 = mu1_2 + mu2_2 + C1;
+	t2 = sigma1_2 + sigma2_2 + C2;
+	t1 = t1.mul(t2);
+
+	// 计算SSIM
+	cv::Mat ssim_map;
+	cv::divide(t3, t1, ssim_map);
+
+	// 计算SSIM的均值
+	cv::Scalar mssim = cv::mean(ssim_map);
+
+	// 返回SSIM值
+	return mssim.val[0];
+}
+
+void FaceInfo::faceRecorde()
+{
+    int number = m_config->getFaceSum();
     int count = 0;
     while (count < number) {
-        detectFace(); // 检测人脸
-        cv::resize(m_faceROI, m_faceROI, cv::Size(100, 100)); // 人脸图像大小归一化
-        cv::imwrite("/home/kylin/Feiteng/face" + m_label + "_" + std::to_string(count) + ".jpg", m_faceROI); // 测试用
-        count++;
+        try
+        {
+            detectFace(); // 检测人脸
+            cv::resize(m_faceROI, m_faceROI, cv::Size(100, 100)); // 人脸图像大小归一化
+            if (m_faceROIs.empty()) {
+                m_faceROIs.push_back(m_faceROI);
+                count++;
+                cv::imwrite("/home/kylin/Feiteng/face" + m_label + "_" + std::to_string(count) + ".jpg", m_faceROI); // 测试用
+            } else {
+                // 判断新输入的照片与之前照片的相似度
+                for(int a = 0; a < m_faceROIs.size(); a++) {
+                    if (getSSIM(m_faceROI, m_faceROIs[a]) > m_config->getSSIM()) {
+                        FEITENG_LOG_ERROR(g_logger) << "人脸相似度过高";
+                        break;
+                    }
+                    if(a == m_faceROIs.size() - 1) {
+                        m_faceROIs.push_back(m_faceROI);
+                        count++;
+                        cv::imwrite("/home/kylin/Feiteng/face" + m_label + "_" + std::to_string(count) + ".jpg", m_faceROI); // 测试用
+                    }
+                }
+            }
+        }
+        catch(const std::exception& e)
+        {
+            FEITENG_LOG_ERROR(g_logger) << e.what();
+        }
+        
+        
     }
 }
 void FaceInfo::detectFace()
 {
     getRawFrame(); // 获取原始图像
-    m_face_cascade->detectMultiScale(m_grayframe, m_faces, 1.1, 3, 0, cv::Size(100, 100)); // 检测人脸
+    m_face_cascade->detectMultiScale(m_grayframe, m_faces, m_config->getScaleFactor()
+                                    , m_config->getMinNeighbors(), 0, cv::Size(m_config->getFaceSize(), m_config->getFaceSize())); // 检测人脸
     if (m_faces.empty()) {
         FEITENG_LOG_ERROR(g_logger) << "未检测到人脸";
         return;
     }
     m_faceROI = m_grayframe(m_faces[0]); // 获取人脸
-    cv::imwrite("/home/kylin/Feiteng/face.jpg", m_faceROI); // 测试用
+}
+
+FaceRecognizer::FaceRecognizer()
+{
+    m_recognizer = cv::face::LBPHFaceRecognizer::create();
 }
 
 void FaceRecognizer::train()
 {   
-    m_txtfile = std::make_shared<txtFile>();
-    m_recognizer = cv::face::LBPHFaceRecognizer::create(); // 创建人脸识别器
-    m_txtfile->read("/home/kylin/Feiteng/face.txt"); // 读取txt文件
-    if (!m_txtfile->pathEmpty() && !m_txtfile->labelEmpty()) {
-        m_images.push_back(cv::imread(m_txtfile->getPath(), cv::IMREAD_GRAYSCALE)); // 读取人脸图像
-        m_labels.push_back(std::stoi(m_txtfile->getLabel())); // 读取人脸标签
-    }
-    if (m_images.empty() || m_labels.empty()) {
-        FEITENG_LOG_ERROR(g_logger) << "读取人脸图像或标签失败";
+    std::vector<cv::Mat> images;
+    std::vector<int> labels;
+    if(m_faceinfos.empty()) {
+        FEITENG_LOG_ERROR(g_logger) << "未录入人脸";
         return;
     }
-    m_recognizer->train(m_images, m_labels); // 训练
-    m_recognizer->save("face.xml"); // 保存训练结果
-    FEITENG_LOG_INFO(g_logger) << "训练完成";
+    for(const auto& faceinfo : m_faceinfos) {
+        for(int i = 0; i < faceinfo->getFaceROIs().size(); i++) {
+            images.push_back(faceinfo->getFaceROIs()[i]);
+            labels.push_back(std::stoi(faceinfo->getLabel()));
+        }
+    }
+    m_recognizer->train(images, labels);
+    m_recognizer->save("/home/kylin/Feiteng/face_recognizer.xml");
+    FEITENG_LOG_INFO(g_logger) << "训练成功";
+}
+
+void FaceRecognizer::predict(cv::Mat face_test)
+{
+    double confidence = 0;
+    int label = 0;
+    if(!face_test.empty()) {
+        m_recognizer->predict(face_test, label, confidence);
+        FEITENG_LOG_INFO(g_logger) << "label: " << label << " confidence: " << confidence;
+    }
 }
 
 void Camera::openCamera()
@@ -84,4 +177,34 @@ void Camera::openCamera()
     }
 }
 
+void Camera::closeCamera()
+{
+    if (m_cap.isOpened()) {
+        m_cap.release();
+        FEITENG_LOG_INFO(g_logger) << "摄像头已关闭";
+    } else {
+        FEITENG_LOG_INFO(g_logger) << "摄像头已关闭";
+    }
+}
+
+Camera::~Camera()
+{
+    if (m_cap.isOpened()) {
+        m_cap.release();
+        FEITENG_LOG_INFO(g_logger) << "摄像头已关闭";
+    } 
+}
+std::string FaceConfig::toString() const
+{
+    std::stringstream ss;
+    ss << "[FaceConfig faceSum=" << m_faceSum
+        << " faceSize=" << m_faceSize
+        << " confidence=" << m_confidence
+        << " SSIM=" << m_SSIM
+        << " scaleFactor=" << m_scaleFactor
+        << " minNeighbors=" << m_minNeighbors
+        << " facePath=" << m_facePath
+        << "]";
+    return ss.str();
+}
 }

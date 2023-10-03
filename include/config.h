@@ -21,6 +21,7 @@
 #include "log.h"
 #include "thread.h"
 #include "database.h"
+#include "face.h"
 
 namespace Feiteng {
     // 配置项的基类
@@ -252,6 +253,7 @@ namespace Feiteng {
         }
     };
 
+    // 偏特化
     template<>
     class LexicalCast<Feiteng::DatabaseConfig, std::string> {
     public:
@@ -277,6 +279,41 @@ namespace Feiteng {
             config.setPassword(node["password"].as<std::string>());
             config.setConn(node["hostname"].as<std::string>());
             config.setType(node["type"].as<std::string>());
+            return config;
+        }
+    };
+
+    template<>
+    class LexicalCast<Feiteng::FaceConfig, std::string> {
+    public:
+        std::string operator()(const FaceConfig& v) {
+            YAML::Node node;
+            node["confidence"] = v.getConfidence();
+            node["ssim"] = v.getSSIM();
+            node["face_sum"] = v.getFaceSum();
+            node["face_size"] = v.getFaceSize();
+            node["scale_factor"] = v.getScaleFactor();
+            node["min_neighbors"] = v.getMinNeighbors();
+            node["face_path"] = v.getFacePath();
+            std::stringstream ss;
+            ss << node;
+            return ss.str();
+        }
+    };
+
+    template<>
+    class LexicalCast<std::string, Feiteng::FaceConfig> {
+    public:
+        FaceConfig operator()(const std::string& v) {
+            YAML::Node node = YAML::Load(v);
+            FaceConfig config;
+            config.setConfidence(node["confidence"].as<double>());
+            config.setSSIM(node["ssim"].as<double>());
+            config.setFaceSum(node["face_sum"].as<int>());
+            config.setFaceSize(node["face_size"].as<int>());
+            config.setScaleFactor(node["scale_factor"].as<double>());
+            config.setMinNeighbors(node["min_neighbors"].as<int>());
+            config.setFacePath(node["face_path"].as<std::string>());
             return config;
         }
     };
