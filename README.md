@@ -82,7 +82,53 @@ static Logger::ptr g_log = CONSTANTINEQAQ_LOG_NAME("system");
 ```
 
 使用processon画图，画出类的关系图，类的关系图，类的继承关系图，类的组合关系图，类的依赖关系图
+
+### 3.人脸系统
+基本已经开发完成：用到的思路是：
+```cpp
+/**
+ * 单例模式摄像头类
+ * 使用宏定义获取摄像头对象，删除摄像头对象，开启摄像头，清除缓存帧
+ */
+singleton<Camera>
+
+/**
+ * 图像信息配置类
+ * 使用yaml-cpp从配置文件中读取参数：
+ * 例如：
+ *      face_config:
+        confidence: 70.12
+        ssim: 0.92
+        face_sum: 10
+        face_size: 100
+        scale_factor: 1.1
+        min_neighbors: 3    
+        face_path: /home/kylin/kylin/face
+ * 与Face类是一对一的关系
+*/
+class FaceConfig
+
+/**
+ * 图像信息类
+ * 调用宏定义从摄像头中获取RawData并进行初步处理，然后一对一交给FaceInfo类
+ */
+class Face
+
+/**
+ * 人脸信息类
+ * 继承图像信息类，从RawData中的原始数据中提取人脸信息，包括人脸位置，人脸特征
+ */
+class FaceInfo : public Face
+
+/**
+ * 人脸训练类
+ * 一对多的关系，一个人脸训练类可以训练多个人脸
+ */
+class FaceRecognizer
+```
+
 ## 项目进度
 - 之前完成了大部分的代码开发，但是由于写的过于屎山，所以现在正在重构代码
 - 国庆第一天：完成了基本框架的构思和日志系统，配置系统，线程系统以及部分人脸检测和文件系统的编写
 - 国庆第二天：完成了数据库的连接以及数据库配置变动的回调，完成了人脸录入和训练的业务
+- 国庆第三天：完成了图像信息参数的配置系统开发，完成了人脸训练以及人脸预测的业务逻辑
