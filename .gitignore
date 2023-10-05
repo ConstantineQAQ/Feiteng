@@ -76,7 +76,6 @@ Thumbs.db
 *.suo
 *.vscode
 
-/build
 /lib
 /conf
 
