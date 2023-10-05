@@ -9,6 +9,7 @@
 #include <QtSql/QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
+#include <QVariant>
 #include <memory>
 #include <string>
 
@@ -24,15 +25,18 @@ public:
     DatabaseConfig(const std::string& type = "",
                    const std::string& conn = "",
                    const std::string& user_name = "",
-                   const std::string& password = "");
+                   const std::string& password = "",
+                   const std::string& databasename = "");
     std::string getType() const { return m_type; }
     std::string getConn() const { return m_conn; }
     std::string getUserName() const { return m_user_name; }
     std::string getPassword() const { return m_password; }
+    std::string getDatabaseName() const { return m_databasename; }
     void setType(const std::string& type) { m_type = type; }
     void setConn(const std::string& conn) { m_conn = conn; }
     void setUserName(const std::string& user_name) { m_user_name = user_name; }
     void setPassword(const std::string& password) { m_password = password; }
+    void setDatabaseName(const std::string& databasename) { m_databasename = databasename; }
     std::string toString() const; // 将数据库配置转换为字符串
     std::string toYamlString(); // 将数据库配置转换为YAML字符串
 
@@ -40,13 +44,15 @@ public:
         return m_type == rhs.m_type
             && m_conn == rhs.m_conn
             && m_user_name == rhs.m_user_name
-            && m_password == rhs.m_password;
+            && m_password == rhs.m_password
+            && m_databasename == rhs.m_databasename;
     }
 private:
     std::string m_type; // 数据库类型
     std::string m_conn; // 数据库连接
     std::string m_user_name; // 数据库用户名
     std::string m_password; // 数据库密码
+    std::string m_databasename; // 数据库名称
 };
 
 // 数据库类

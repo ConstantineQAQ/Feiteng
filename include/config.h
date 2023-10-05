@@ -264,6 +264,7 @@ namespace Feiteng {
             node["password"] = v.getPassword();
             node["hostname"] = v.getConn();
             node["type"] = v.getType();
+            node["database"] = v.getDatabaseName();
             std::stringstream ss;
             ss << node;
             return ss.str();
@@ -280,6 +281,7 @@ namespace Feiteng {
             config.setPassword(node["password"].as<std::string>());
             config.setConn(node["hostname"].as<std::string>());
             config.setType(node["type"].as<std::string>());
+            config.setDatabaseName(node["database"].as<std::string>());
             return config;
         }
     };

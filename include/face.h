@@ -109,6 +109,7 @@ public:
     typedef std::shared_ptr<FaceInfo> ptr;
     void faceRecorde(); // 人脸录入
     FaceInfo(std::string label = "unknown");
+    void setLabel(std::string label) { m_label = label; }
     std::string getLabel() const { return m_label; }
     std::vector<cv::Rect> getFaces() const { return m_faces; } 
     std::vector<cv::Mat> getFaceROIs() const { return m_faceROIs; }
@@ -127,16 +128,29 @@ private:
 
 // 人脸训练器
 class FaceRecognizer {
+friend class FacePredict;
 public:
     typedef std::shared_ptr<FaceRecognizer> ptr;
     FaceRecognizer();
     void addFaceInfo(FaceInfo::ptr faceinfo) { m_faceinfos.push_back(std::move(faceinfo)); }
     cv::Ptr<cv::face::LBPHFaceRecognizer> getRecognizer() const { return m_recognizer; }
     void train(); // 训练
-    void predict(cv::Mat face_test); // 预测
 private:
     cv::Ptr<cv::face::LBPHFaceRecognizer> m_recognizer; // 人脸识别器
     std::vector<FaceInfo::ptr> m_faceinfos; // 人脸信息
+};
+
+// 人脸预测类
+class FacePredict {
+public:
+    typedef std::shared_ptr<FacePredict> ptr;
+    FacePredict(FaceRecognizer::ptr recognizer): m_recognizer(recognizer) {}
+    void predict(cv::Mat face_test); // 预测
+    int getLabel() const { return m_label; }
+private:
+    int m_label; // 标签
+    double m_confidence; // 置信度
+    FaceRecognizer::ptr m_recognizer; // FaceRecognizer 实例的引用
 };
 
 }

@@ -90,6 +90,7 @@ void FaceInfo::faceRecorde()
             cv::resize(m_faceROI, m_faceROI, cv::Size(100, 100)); // 人脸图像大小归一化
             if (m_faceROIs.empty()) {
                 m_faceROIs.push_back(m_faceROI);
+                FEITENG_LOG_INFO(g_logger) << "录入成功";
                 count++;
                 cv::imwrite("/home/kylin/Feiteng/face" + m_label + "_" + std::to_string(count) + ".jpg", m_faceROI); // 测试用
             } else {
@@ -101,6 +102,7 @@ void FaceInfo::faceRecorde()
                     }
                     if(a == m_faceROIs.size() - 1) {
                         m_faceROIs.push_back(m_faceROI);
+                        FEITENG_LOG_INFO(g_logger) << "录入成功";
                         count++;
                         cv::imwrite("/home/kylin/Feiteng/face" + m_label + "_" + std::to_string(count) + ".jpg", m_faceROI); // 测试用
                     }
@@ -151,16 +153,6 @@ void FaceRecognizer::train()
     FEITENG_LOG_INFO(g_logger) << "训练成功";
 }
 
-void FaceRecognizer::predict(cv::Mat face_test)
-{
-    double confidence = 0;
-    int label = 0;
-    if(!face_test.empty()) {
-        m_recognizer->predict(face_test, label, confidence);
-        FEITENG_LOG_INFO(g_logger) << "label: " << label << " confidence: " << confidence;
-    }
-}
-
 void Camera::openCamera()
 {
     if (m_cap.isOpened()) {
@@ -206,5 +198,15 @@ std::string FaceConfig::toString() const
         << " facePath=" << m_facePath
         << "]";
     return ss.str();
+}
+
+void FacePredict::predict(cv::Mat face_test)
+{
+    if(!face_test.empty()) {
+        m_recognizer->m_recognizer->predict(face_test, m_label, m_confidence);
+        FEITENG_LOG_INFO(g_logger) << "label: " << m_label << " confidence: " << m_confidence;
+    } else {
+        FEITENG_LOG_ERROR(g_logger) << "未检测到人脸";
+    }
 }
 }

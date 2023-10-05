@@ -47,31 +47,39 @@ void testDatabaseYaml() {
     std::cout << "Type: " << db_config.getType() << std::endl;
 }
 
-int main() {
-    Feiteng::ConfigVar<Feiteng::DatabaseConfig>::ptr db_config =
-            Feiteng::Config::Lookup<Feiteng::DatabaseConfig>(
-                "db_config" 
-                , Feiteng::DatabaseConfig("QMySQL", "127.0.0.1", "test", "test") 
-                , "Database config");
-    db_config->addListener([](const Feiteng::DatabaseConfig& old_value, const Feiteng::DatabaseConfig& new_value) {
-        g_database->setConfig(std::shared_ptr<Feiteng::DatabaseConfig>(
-            new Feiteng::DatabaseConfig(new_value)
-        ));
-    });
-    std::cout << "Username: " << db_config->getValue().getUserName() << std::endl;
-    std::cout << "Password: " << db_config->getValue().getPassword() << std::endl;
-    std::cout << "IP: " << db_config->getValue().getConn() << std::endl;
-    std::cout << "Type: " << db_config->getValue().getType() << std::endl;
-    // 连接数据库
-    g_database->setConfig(std::shared_ptr<Feiteng::DatabaseConfig>(
-        new Feiteng::DatabaseConfig(db_config->getValue())
-    ));
-    g_database->connect();
-
-    // 根据配置文件更改g_database的配置
+void connectDatabase() {
+    auto db_config_var = Feiteng::Config::Lookup<Feiteng::DatabaseConfig>(
+        "db_config",
+        Feiteng::DatabaseConfig{"MySQL", "127.0.0.1", "test", "test"},
+        "Database configuration"
+    );
     YAML::Node root = YAML::LoadFile("../conf/database.yml");
     Feiteng::Config::LoadFromYaml(root);
-
+    Feiteng::DatabaseConfig db_config = db_config_var->getValue();
+    g_database->setConfig(std::shared_ptr<Feiteng::DatabaseConfig>(
+        new Feiteng::DatabaseConfig(db_config)
+    ));
+    FEITENG_LOG_INFO(FEITENG_LOG_ROOT()) << g_database->getConfig()->toString();
     g_database->connect();
+}
+
+void test_select() {
+    connectDatabase();
+    std::string sql = "select name,student_id,id from students_face_recognition";
+    QSqlQuery query;
+    if(!query.exec(QString::fromStdString(sql))) {
+        FEITENG_LOG_ERROR(FEITENG_LOG_ROOT()) << "查询失败";
+        return;
+    }
+    while(query.next()) {
+        std::string name = query.value(0).toString().toStdString();
+        std::string student_id = query.value(1).toString().toStdString();
+        int id = query.value(2).toInt();
+        FEITENG_LOG_INFO(FEITENG_LOG_ROOT()) << "name: " << name << " student_id: " << student_id << " id: " << id;
+    }
+}
+
+int main() {
+    test_select();
     return 0;
 }

@@ -19,7 +19,6 @@ void test_predict() {
     Feiteng::FaceInfo *face = new Feiteng::FaceInfo();
     face->faceRecorde();
     cv::Mat test_face = face->getFaceROI();
-    recognizer->predict(test_face);
 }
 
 void config_face(){

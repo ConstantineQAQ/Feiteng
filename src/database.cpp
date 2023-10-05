@@ -22,7 +22,7 @@ DatabaseManager::DatabaseManager()
 
 Database::Database(const std::string &name) : m_name(name)
 {
-    m_config.reset(new DatabaseConfig("QMYSQL","127.0.0.1","kylin","kylin"));
+    m_config.reset(new DatabaseConfig("QMYSQL","127.0.0.1","kylin","kylin","admindatabase"));
 }
 
 void Database::connect()
@@ -31,6 +31,7 @@ void Database::connect()
     db.setHostName(QString::fromStdString(m_config->getConn()));
     db.setUserName(QString::fromStdString(m_config->getUserName()));
     db.setPassword(QString::fromStdString(m_config->getPassword()));
+    db.setDatabaseName(QString::fromStdString(m_config->getDatabaseName()));
     if(!db.open()) {
         FEITENG_LOG_ERROR(FEITENG_LOG_ROOT()) << "连接数据库失败： " << m_name;
         return;
@@ -38,11 +39,14 @@ void Database::connect()
     FEITENG_LOG_INFO(FEITENG_LOG_ROOT()) << "成功连接数据库：  " << m_name;
 }
 
-DatabaseConfig::DatabaseConfig(const std::string &type, const std::string &conn, const std::string &user_name, const std::string &password)
+DatabaseConfig::DatabaseConfig(const std::string &type, const std::string &conn, 
+                               const std::string &user_name, const std::string &password,
+                               const std::string &databasename)
 : m_type(type)
 , m_conn(conn)
 , m_user_name(user_name)
 , m_password(password)
+, m_databasename(databasename)
 {
 }
 std::string DatabaseConfig::toString() const
@@ -52,6 +56,7 @@ std::string DatabaseConfig::toString() const
         << " conn=" << m_conn
         << " user_name=" << m_user_name
         << " password=" << m_password
+        << " databasename=" << m_databasename
         << "]";
     return ss.str();
 }

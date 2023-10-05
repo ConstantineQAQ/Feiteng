@@ -1,0 +1,124 @@
+{
+	"BUILD_DIR" : "/home/kylin/Feiteng/build/Feiteng_autogen",
+	"CMAKE_BINARY_DIR" : "/home/kylin/Feiteng/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/kylin/Feiteng/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/kylin/Feiteng",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_SOURCE_DIR" : "/home/kylin/Feiteng",
+	"HEADERS" : 
+	[
+		[
+			"/home/kylin/Feiteng/include/config.h",
+			"MU",
+			"6YEA5652QU/moc_config.cpp"
+		],
+		[
+			"/home/kylin/Feiteng/include/database.h",
+			"MU",
+			"6YEA5652QU/moc_database.cpp"
+		],
+		[ "/home/kylin/Feiteng/include/face.h", "MU", "6YEA5652QU/moc_face.cpp" ],
+		[ "/home/kylin/Feiteng/include/log.h", "MU", "6YEA5652QU/moc_log.cpp" ],
+		[
+			"/home/kylin/Feiteng/include/mainwindow.h",
+			"MU",
+			"6YEA5652QU/moc_mainwindow.cpp"
+		],
+		[
+			"/home/kylin/Feiteng/include/singleton.h",
+			"MU",
+			"6YEA5652QU/moc_singleton.cpp"
+		],
+		[
+			"/home/kylin/Feiteng/include/temperature.h",
+			"MU",
+			"6YEA5652QU/moc_temperature.cpp"
+		],
+		[
+			"/home/kylin/Feiteng/include/thread.h",
+			"MU",
+			"6YEA5652QU/moc_thread.cpp"
+		],
+		[ "/home/kylin/Feiteng/include/util.h", "MU", "6YEA5652QU/moc_util.cpp" ]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/kylin/Feiteng/build/Feiteng_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/kylin/Feiteng/build/Feiteng_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"Feiteng_EXPORTS",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_SERIALPORT_LIB",
+		"QT_SQL_LIB",
+		"QT_WIDGETS_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/kylin/Feiteng/build",
+		"/home/kylin/Feiteng",
+		"/home/kylin/Feiteng/include",
+		"/usr/include/yaml-cpp",
+		"/home/kylin/Feiteng/build/Feiteng_autogen/include",
+		"/usr/include/aarch64-linux-gnu/qt5",
+		"/usr/include/aarch64-linux-gnu/qt5/QtCore",
+		"/usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/aarch64-linux-gnu/qt5/QtGui",
+		"/usr/include/aarch64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/aarch64-linux-gnu/qt5/QtSql",
+		"/usr/include/aarch64-linux-gnu/qt5/QtSerialPort",
+		"/usr/local/include/opencv4",
+		"/usr/include",
+		"/usr/include/c++/9",
+		"/usr/include/aarch64-linux-gnu/c++/9",
+		"/usr/include/c++/9/backward",
+		"/usr/lib/gcc/aarch64-linux-gnu/9/include",
+		"/usr/local/include",
+		"/usr/include/aarch64-linux-gnu"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : true,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/aarch64-linux-gnu-g++",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/kylin/Feiteng/build/Feiteng_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 1,
+	"PARSE_CACHE_FILE" : "/home/kylin/Feiteng/build/CMakeFiles/Feiteng_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"SETTINGS_FILE" : "/home/kylin/Feiteng/build/CMakeFiles/Feiteng_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[ "/home/kylin/Feiteng/src/config.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/database.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/face.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/log.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/main.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/mainwindow.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/temperature.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/thread.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/util.cpp", "MU" ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [ "/home/kylin/Feiteng/ui" ],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}
