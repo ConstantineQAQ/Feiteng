@@ -22,6 +22,7 @@
 #include "thread.h"
 #include "database.h"
 #include "face.h"
+#include "temperature.h"
 
 namespace Feiteng {
     // 配置项的基类
@@ -314,6 +315,64 @@ namespace Feiteng {
             config.setScaleFactor(node["scale_factor"].as<double>());
             config.setMinNeighbors(node["min_neighbors"].as<int>());
             config.setFacePath(node["face_path"].as<std::string>());
+            return config;
+        }
+    };
+
+    template<>
+    class LexicalCast<Feiteng::SerialConfig, std::string> {
+    public:
+        std::string operator()(const SerialConfig& v) {
+            YAML::Node node;
+            node["port"] = v.getPortName();
+            node["baud_rate"] = v.getBaudRate();
+            node["data_bits"] = v.getDataBits();
+            node["stop_bits"] = v.getStopBits();
+            node["parity"] = v.getParity();
+            node["flow_control"] = v.getFlowControl();
+            std::stringstream ss;
+            ss << node;
+            return ss.str();
+        }
+    };
+
+    template<>
+    class LexicalCast<std::string, Feiteng::SerialConfig> {
+    public:
+        SerialConfig operator()(const std::string& v) {
+            YAML::Node node = YAML::Load(v);
+            SerialConfig config;
+            config.setPortName(node["port"].as<std::string>());
+            config.setBaudRate(node["baud_rate"].as<int>());
+            config.setDataBits(node["data_bits"].as<int>());
+            config.setStopBits(node["stop_bits"].as<int>());
+            config.setParity(node["parity"].as<int>());
+            config.setFlowControl(node["flow_control"].as<int>());
+            return config;
+        }
+    };
+
+    template<>
+    class LexicalCast<Feiteng::TemperatureConfig, std::string> {
+    public:
+        std::string operator()(const TemperatureConfig& v) {
+            YAML::Node node;
+            node["interval"] = v.getInterval();
+            node["threshold"] = v.getThreshold();
+            std::stringstream ss;
+            ss << node;
+            return ss.str();
+        }
+    };
+
+    template<>
+    class LexicalCast<std::string, Feiteng::TemperatureConfig> {
+    public:
+        TemperatureConfig operator()(const std::string& v) {
+            YAML::Node node = YAML::Load(v);
+            TemperatureConfig config;
+            config.setInterval(node["interval"].as<int>());
+            config.setThreshold(node["threshold"].as<double>());
             return config;
         }
     };

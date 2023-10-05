@@ -8,7 +8,6 @@ ConfigVarBase::ptr Feiteng::Config::LookupBase(const std::string &name)
     auto it = GetDatas().find(name);
     return it == GetDatas().end() ? nullptr : it->second;
 }
-
 // "A.B", 10
 // A:
 //   B: 10

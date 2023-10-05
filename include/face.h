@@ -1,7 +1,6 @@
 #ifndef FACE_H
 #define FACE_H
 
-#include "file.h"
 #include <vector>
 #include <string>
 #include <memory>
@@ -13,6 +12,9 @@
 #include <opencv4/opencv2/face.hpp>
 #include <opencv4/opencv2/face/facerec.hpp>
 #include <opencv4/opencv2/core/types.hpp>
+
+#include "singleton.h"
+#include "log.h"
 
 
 #define FEITENG_CAMERA_OPEN() Feiteng::CameraMgr::GetInstance()->openCamera()
