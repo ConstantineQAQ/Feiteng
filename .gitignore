@@ -77,7 +77,7 @@ Thumbs.db
 *.vscode
 
 /lib
-/conf
+/build
 
 # qtcreator generated files
 *.pro.user*
