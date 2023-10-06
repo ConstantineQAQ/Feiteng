@@ -142,6 +142,7 @@ public:
     virtual ~Temperature() {}
     void setSerial(Serial::ptr serial) { m_serial = serial; }
     void setConfig(TemperatureConfig::ptr config) { m_config = config; }
+    Serial::ptr getSerial() const { return m_serial; }
     TemperatureConfig::ptr getConfig() const { return m_config; }
     Temperature();
     static ptr create(TempMode mode) {
@@ -169,8 +170,11 @@ Q_OBJECT
 public:
     typedef std::shared_ptr<BodyTemp> ptr;
     bool isTemperatureNormal();
+    double getBodyTemperature() const { return m_bodyTemperature; }
 public slots:
     void fetchTemperature();
+private:
+    double m_bodyTemperature; // 人体温度
 };
 
 class ObjectTemp : public Temperature

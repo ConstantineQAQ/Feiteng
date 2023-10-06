@@ -55,7 +55,7 @@ include CMakeFiles/Feiteng_autogen.dir/progress.make
 
 CMakeFiles/Feiteng_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target Feiteng"
-	/usr/bin/cmake -E cmake_autogen /home/kylin/Feiteng/build/CMakeFiles/Feiteng_autogen.dir/AutogenInfo.json Debug
+	/usr/bin/cmake -E cmake_autogen /home/kylin/Feiteng/build/CMakeFiles/Feiteng_autogen.dir/AutogenInfo.json ""
 
 Feiteng_autogen: CMakeFiles/Feiteng_autogen
 Feiteng_autogen: CMakeFiles/Feiteng_autogen.dir/build.make

@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Feiteng.dir/src/log.cpp.o"
   "CMakeFiles/Feiteng.dir/src/main.cpp.o"
   "CMakeFiles/Feiteng.dir/src/mainwindow.cpp.o"
+  "CMakeFiles/Feiteng.dir/src/person.cpp.o"
   "CMakeFiles/Feiteng.dir/src/temperature.cpp.o"
   "CMakeFiles/Feiteng.dir/src/thread.cpp.o"
   "CMakeFiles/Feiteng.dir/src/util.cpp.o"

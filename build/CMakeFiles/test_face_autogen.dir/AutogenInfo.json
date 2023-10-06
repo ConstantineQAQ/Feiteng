@@ -13,6 +13,7 @@
 	[
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
 		"QT_SERIALPORT_LIB",
 		"QT_SQL_LIB",
 		"QT_WIDGETS_LIB"

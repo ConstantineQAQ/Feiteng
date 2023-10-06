@@ -55,7 +55,7 @@ include CMakeFiles/test_ui_autogen.dir/progress.make
 
 CMakeFiles/test_ui_autogen:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target test_ui"
-	/usr/bin/cmake -E cmake_autogen /home/kylin/Feiteng/build/CMakeFiles/test_ui_autogen.dir/AutogenInfo.json Debug
+	/usr/bin/cmake -E cmake_autogen /home/kylin/Feiteng/build/CMakeFiles/test_ui_autogen.dir/AutogenInfo.json ""
 
 test_ui_autogen: CMakeFiles/test_ui_autogen
 test_ui_autogen: CMakeFiles/test_ui_autogen.dir/build.make

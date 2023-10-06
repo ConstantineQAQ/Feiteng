@@ -148,9 +148,22 @@ CMakeFiles/Feiteng.dir/src/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feiteng.dir/src/mainwindow.cpp.s"
 	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) -D__FILE__=\"src/mainwindow.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kylin/Feiteng/src/mainwindow.cpp -o CMakeFiles/Feiteng.dir/src/mainwindow.cpp.s
 
+CMakeFiles/Feiteng.dir/src/person.cpp.o: CMakeFiles/Feiteng.dir/flags.make
+CMakeFiles/Feiteng.dir/src/person.cpp.o: ../src/person.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Feiteng.dir/src/person.cpp.o"
+	/usr/bin/aarch64-linux-gnu-g++  $(CXX_DEFINES) -D__FILE__=\"src/person.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feiteng.dir/src/person.cpp.o -c /home/kylin/Feiteng/src/person.cpp
+
+CMakeFiles/Feiteng.dir/src/person.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Feiteng.dir/src/person.cpp.i"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) -D__FILE__=\"src/person.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kylin/Feiteng/src/person.cpp > CMakeFiles/Feiteng.dir/src/person.cpp.i
+
+CMakeFiles/Feiteng.dir/src/person.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Feiteng.dir/src/person.cpp.s"
+	/usr/bin/aarch64-linux-gnu-g++ $(CXX_DEFINES) -D__FILE__=\"src/person.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kylin/Feiteng/src/person.cpp -o CMakeFiles/Feiteng.dir/src/person.cpp.s
+
 CMakeFiles/Feiteng.dir/src/temperature.cpp.o: CMakeFiles/Feiteng.dir/flags.make
 CMakeFiles/Feiteng.dir/src/temperature.cpp.o: ../src/temperature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Feiteng.dir/src/temperature.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Feiteng.dir/src/temperature.cpp.o"
 	/usr/bin/aarch64-linux-gnu-g++  $(CXX_DEFINES) -D__FILE__=\"src/temperature.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feiteng.dir/src/temperature.cpp.o -c /home/kylin/Feiteng/src/temperature.cpp
 
 CMakeFiles/Feiteng.dir/src/temperature.cpp.i: cmake_force
@@ -163,7 +176,7 @@ CMakeFiles/Feiteng.dir/src/temperature.cpp.s: cmake_force
 
 CMakeFiles/Feiteng.dir/src/thread.cpp.o: CMakeFiles/Feiteng.dir/flags.make
 CMakeFiles/Feiteng.dir/src/thread.cpp.o: ../src/thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Feiteng.dir/src/thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Feiteng.dir/src/thread.cpp.o"
 	/usr/bin/aarch64-linux-gnu-g++  $(CXX_DEFINES) -D__FILE__=\"src/thread.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feiteng.dir/src/thread.cpp.o -c /home/kylin/Feiteng/src/thread.cpp
 
 CMakeFiles/Feiteng.dir/src/thread.cpp.i: cmake_force
@@ -176,7 +189,7 @@ CMakeFiles/Feiteng.dir/src/thread.cpp.s: cmake_force
 
 CMakeFiles/Feiteng.dir/src/util.cpp.o: CMakeFiles/Feiteng.dir/flags.make
 CMakeFiles/Feiteng.dir/src/util.cpp.o: ../src/util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Feiteng.dir/src/util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Feiteng.dir/src/util.cpp.o"
 	/usr/bin/aarch64-linux-gnu-g++  $(CXX_DEFINES) -D__FILE__=\"src/util.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Feiteng.dir/src/util.cpp.o -c /home/kylin/Feiteng/src/util.cpp
 
 CMakeFiles/Feiteng.dir/src/util.cpp.i: cmake_force
@@ -196,6 +209,7 @@ Feiteng_OBJECTS = \
 "CMakeFiles/Feiteng.dir/src/log.cpp.o" \
 "CMakeFiles/Feiteng.dir/src/main.cpp.o" \
 "CMakeFiles/Feiteng.dir/src/mainwindow.cpp.o" \
+"CMakeFiles/Feiteng.dir/src/person.cpp.o" \
 "CMakeFiles/Feiteng.dir/src/temperature.cpp.o" \
 "CMakeFiles/Feiteng.dir/src/thread.cpp.o" \
 "CMakeFiles/Feiteng.dir/src/util.cpp.o"
@@ -210,6 +224,7 @@ Feiteng_EXTERNAL_OBJECTS =
 ../lib/libFeiteng.so: CMakeFiles/Feiteng.dir/src/log.cpp.o
 ../lib/libFeiteng.so: CMakeFiles/Feiteng.dir/src/main.cpp.o
 ../lib/libFeiteng.so: CMakeFiles/Feiteng.dir/src/mainwindow.cpp.o
+../lib/libFeiteng.so: CMakeFiles/Feiteng.dir/src/person.cpp.o
 ../lib/libFeiteng.so: CMakeFiles/Feiteng.dir/src/temperature.cpp.o
 ../lib/libFeiteng.so: CMakeFiles/Feiteng.dir/src/thread.cpp.o
 ../lib/libFeiteng.so: CMakeFiles/Feiteng.dir/src/util.cpp.o
@@ -273,7 +288,7 @@ Feiteng_EXTERNAL_OBJECTS =
 ../lib/libFeiteng.so: /usr/local/lib/libopencv_imgproc.so.4.6.0
 ../lib/libFeiteng.so: /usr/local/lib/libopencv_core.so.4.6.0
 ../lib/libFeiteng.so: CMakeFiles/Feiteng.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX shared library ../lib/libFeiteng.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kylin/Feiteng/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX shared library ../lib/libFeiteng.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Feiteng.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

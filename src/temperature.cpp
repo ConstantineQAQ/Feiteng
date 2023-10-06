@@ -15,6 +15,7 @@ void BodyTemp::fetchTemperature() {
     int bodyTempDec = static_cast<unsigned char>(data.at(3));
     double bodyTemp = bodyTempInt + bodyTempDec * 0.01;
     FEITENG_LOG_INFO(g_logger) << QString("人体温度 %1C").arg(bodyTemp,0,'f',1).toStdString();
+    m_bodyTemperature = bodyTemp;
 }
 
 bool BodyTemp::isTemperatureNormal() {
@@ -80,7 +81,7 @@ void Serial::Sopen()
         return;
     }
     if(!m_serial->open(QIODevice::ReadWrite)) {
-        FEITENG_LOG_ERROR(g_logger) << "无法打开串口： " << m_serial->errorString().toStdString(); 
+        FEITENG_LOG_ERROR(g_logger) << "无法打开串口： " << m_config->getPortName() + " " << m_serial->errorString().toStdString(); 
         return;
     }
     FEITENG_LOG_INFO(g_logger) << "串口打开成功";

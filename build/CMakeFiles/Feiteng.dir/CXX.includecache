@@ -127,8 +127,6 @@ thread.h
 ../include/mainwindow.h
 QMainWindow
 -
-QPushButton
--
 QtSerialPort/QSerialPort
 -
 QtSerialPort/QSerialPortInfo
@@ -141,6 +139,14 @@ QPixmap
 -
 QTimer
 -
+QDialog
+-
+QLabel
+-
+QPushButton
+-
+QVBoxLayout
+-
 QtConcurrent/QtConcurrent
 -
 face.h
@@ -149,8 +155,22 @@ config.h
 ../include/config.h
 log.h
 ../include/log.h
+person.h
+../include/person.h
 ui_mainwindow.h
 ../include/ui_mainwindow.h
+
+../include/person.h
+string
+-
+memory
+-
+face.h
+../include/face.h
+log.h
+../include/log.h
+temperature.h
+../include/temperature.h
 
 ../include/singleton.h
 memory
@@ -2700,13 +2720,13 @@ qapplication.h
 qdialog.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qdialog.h
 
-/usr/include/aarch64-linux-gnu/qt5/QtWidgets/QFrame
-qframe.h
-/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qframe.h
-
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QGridLayout
 qgridlayout.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qgridlayout.h
+
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHBoxLayout
+qboxlayout.h
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qboxlayout.h
 
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel
 qlabel.h
@@ -2973,9 +2993,9 @@ QtCore/QVariant
 -
 QtWidgets/QApplication
 -
-QtWidgets/QFrame
--
 QtWidgets/QGridLayout
+-
+QtWidgets/QHBoxLayout
 -
 QtWidgets/QLabel
 -

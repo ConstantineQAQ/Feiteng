@@ -9,6 +9,7 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /home/kylin/Feiteng/include/face.h
  /home/kylin/Feiteng/include/log.h
  /home/kylin/Feiteng/include/mainwindow.h
+ /home/kylin/Feiteng/include/person.h
  /home/kylin/Feiteng/include/singleton.h
  /home/kylin/Feiteng/include/temperature.h
  /home/kylin/Feiteng/include/thread.h
@@ -275,8 +276,8 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtSql/qtsqlglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QApplication
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QDialog
- /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QFrame
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QGridLayout
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHBoxLayout
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QMainWindow
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QMenuBar

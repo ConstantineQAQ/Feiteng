@@ -127,8 +127,6 @@ thread.h
 /home/kylin/Feiteng/include/mainwindow.h
 QMainWindow
 -
-QPushButton
--
 QtSerialPort/QSerialPort
 -
 QtSerialPort/QSerialPortInfo
@@ -141,6 +139,14 @@ QPixmap
 -
 QTimer
 -
+QDialog
+-
+QLabel
+-
+QPushButton
+-
+QVBoxLayout
+-
 QtConcurrent/QtConcurrent
 -
 face.h
@@ -149,8 +155,22 @@ config.h
 /home/kylin/Feiteng/include/config.h
 log.h
 /home/kylin/Feiteng/include/log.h
+person.h
+/home/kylin/Feiteng/include/person.h
 ui_mainwindow.h
 /home/kylin/Feiteng/include/ui_mainwindow.h
+
+/home/kylin/Feiteng/include/person.h
+string
+-
+memory
+-
+face.h
+/home/kylin/Feiteng/include/face.h
+log.h
+/home/kylin/Feiteng/include/log.h
+temperature.h
+/home/kylin/Feiteng/include/temperature.h
 
 /home/kylin/Feiteng/include/singleton.h
 memory
@@ -2704,13 +2724,13 @@ qapplication.h
 qdialog.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qdialog.h
 
-/usr/include/aarch64-linux-gnu/qt5/QtWidgets/QFrame
-qframe.h
-/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qframe.h
-
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QGridLayout
 qgridlayout.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qgridlayout.h
+
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHBoxLayout
+qboxlayout.h
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qboxlayout.h
 
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel
 qlabel.h
@@ -2977,9 +2997,9 @@ QtCore/QVariant
 -
 QtWidgets/QApplication
 -
-QtWidgets/QFrame
--
 QtWidgets/QGridLayout
+-
+QtWidgets/QHBoxLayout
 -
 QtWidgets/QLabel
 -

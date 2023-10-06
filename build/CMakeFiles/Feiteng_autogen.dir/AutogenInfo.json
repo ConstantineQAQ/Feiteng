@@ -25,6 +25,11 @@
 			"6YEA5652QU/moc_mainwindow.cpp"
 		],
 		[
+			"/home/kylin/Feiteng/include/person.h",
+			"MU",
+			"6YEA5652QU/moc_person.cpp"
+		],
+		[
 			"/home/kylin/Feiteng/include/singleton.h",
 			"MU",
 			"6YEA5652QU/moc_singleton.cpp"
@@ -49,6 +54,7 @@
 		"Feiteng_EXPORTS",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
 		"QT_SERIALPORT_LIB",
 		"QT_SQL_LIB",
 		"QT_WIDGETS_LIB"
@@ -112,6 +118,7 @@
 		[ "/home/kylin/Feiteng/src/log.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/main.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/mainwindow.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/person.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/temperature.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/thread.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/util.cpp", "MU" ]

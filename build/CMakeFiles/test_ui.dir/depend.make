@@ -8,6 +8,7 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/database.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/face.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/log.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/mainwindow.h
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/person.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/singleton.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/temperature.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/thread.h
@@ -274,8 +275,8 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/Q
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtSql/qtsqlglobal.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QApplication
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QDialog
-CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QFrame
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QGridLayout
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHBoxLayout
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QMainWindow
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QMenuBar

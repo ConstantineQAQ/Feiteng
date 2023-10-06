@@ -117,6 +117,7 @@ void FaceInfo::faceRecorde()
         
     }
 }
+
 void FaceInfo::detectFace()
 {
     getRawFrame(); // 获取原始图像
@@ -124,6 +125,7 @@ void FaceInfo::detectFace()
                                     , m_config->getMinNeighbors(), 0, cv::Size(m_config->getFaceSize(), m_config->getFaceSize())); // 检测人脸
     if (m_faces.empty()) {
         FEITENG_LOG_ERROR(g_logger) << "未检测到人脸";
+        m_faceROI = cv::Mat();
         return;
     }
     m_faceROI = m_grayframe(m_faces[0]); // 获取人脸
@@ -206,6 +208,7 @@ void FacePredict::predict(cv::Mat face_test)
         m_recognizer->m_recognizer->predict(face_test, m_label, m_confidence);
         FEITENG_LOG_INFO(g_logger) << "label: " << m_label << " confidence: " << m_confidence;
     } else {
+        m_confidence = -1;
         FEITENG_LOG_ERROR(g_logger) << "未检测到人脸";
     }
 }

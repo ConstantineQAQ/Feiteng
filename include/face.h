@@ -114,11 +114,10 @@ public:
     std::vector<cv::Rect> getFaces() const { return m_faces; } 
     std::vector<cv::Mat> getFaceROIs() const { return m_faceROIs; }
     cv::Mat getFaceROI() const { return m_faceROI; } 
-
+    void detectFace(); // 录入一张照片
     virtual ~FaceInfo() {}
 private:
     double getSSIM(cv::Mat img1, cv::Mat img2); // 计算两张图片的相似度
-    void detectFace(); // 人脸检测
     std::string m_label; // 标签
     std::vector<cv::Rect> m_faces; // 人脸矩形框
     cv::Mat m_faceROI; // 一张人脸照片
@@ -147,6 +146,7 @@ public:
     FacePredict(FaceRecognizer::ptr recognizer): m_recognizer(recognizer) {}
     void predict(cv::Mat face_test); // 预测
     int getLabel() const { return m_label; }
+    double getConfidence() const { return m_confidence; }
 private:
     int m_label; // 标签
     double m_confidence; // 置信度
