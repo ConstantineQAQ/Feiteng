@@ -1,0 +1,8 @@
+face_config:
+  confidence: 70.12
+  ssim: 0.92
+  face_sum: 5
+  face_size: 100
+  scale_factor: 1.1
+  min_neighbors: 3
+  face_path: /home/kylin/Feiteng/face

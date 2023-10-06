@@ -1,0 +1,6 @@
+db_config:
+  username: kylin
+  password: kylin
+  hostname: localhost
+  type: QMYSQL
+  database: admindatabase
