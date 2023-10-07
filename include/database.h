@@ -1,91 +1,171 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
-#include "log.h"
-#include "thread.h"
 #include "util.h"
 #include "singleton.h"
+#include "config.h"
+#include "db.h"
 
+#include <QtSql>
 #include <QtSql/QSqlDatabase>
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QVariant>
+#include <QtSql/QSqlRecord>
+#include <QDateTime>
+#include <QSqlDriver>
+#include <QSqlField>
+#include <QSqlResult>
+#include <QSqlTableModel>
+#include <QSqlRecord>
+#include <QSqlError>
 #include <memory>
 #include <string>
+#include <functional>
 
-#define FEITENG_DATABASE_ROOT() Feiteng::DatabaseMgr::GetInstance()->getRoot()
-#define FEITENG_DATABASE_NAME(name) Feiteng::DatabaseMgr::GetInstance()->getDatabase(name)
+#define FEITENG_MYSQL_ROOT() Feiteng::MySQLMgr::GetInstance()->getRoot()
+#define FEITENG_MYSQL_NAME(name) Feiteng::MySQLMgr::GetInstance()->getMySQL(name)
+#define FEITENG_MYSQL_DELETE(name) Feiteng::MySQLMgr::GetInstance()->del(name)
 
 namespace Feiteng {
 
-// 数据库配置类
-class DatabaseConfig {
+class MySQLRes : public ISQLData {
 public:
-    typedef std::shared_ptr<DatabaseConfig> ptr;
-    DatabaseConfig(const std::string& type = "",
-                   const std::string& conn = "",
-                   const std::string& user_name = "",
-                   const std::string& password = "",
-                   const std::string& databasename = "");
-    std::string getType() const { return m_type; }
-    std::string getConn() const { return m_conn; }
-    std::string getUserName() const { return m_user_name; }
-    std::string getPassword() const { return m_password; }
-    std::string getDatabaseName() const { return m_databasename; }
-    void setType(const std::string& type) { m_type = type; }
-    void setConn(const std::string& conn) { m_conn = conn; }
-    void setUserName(const std::string& user_name) { m_user_name = user_name; }
-    void setPassword(const std::string& password) { m_password = password; }
-    void setDatabaseName(const std::string& databasename) { m_databasename = databasename; }
-    std::string toString() const; // 将数据库配置转换为字符串
-    std::string toYamlString(); // 将数据库配置转换为YAML字符串
+    typedef std::shared_ptr<MySQLRes> ptr;
+    MySQLRes(const QSqlQuery& query) : m_query(query) {}
+    bool isValid() const override { return m_query.isValid(); }
+    QString lastError() const override { return m_query.lastError().text(); }
+    int getDataCount() override { return m_query.size(); }
+    int getColumnCount() override { return m_query.record().count(); }
+    int getColumnBytes(int idx) override { return m_query.record().field(idx).length(); }
+    QVariant::Type getColumnType(int idx) override { return m_query.record().field(idx).type(); }
+    QString getColumnName(int idx) override { return m_query.record().fieldName(idx); }
+    bool isNull(int idx) override { return m_query.isNull(idx); }
+    QVariant getValue(int idx) override { return m_query.value(idx); }
+    std::string getString(int idx) override { return m_query.value(idx).toString().toStdString(); }
+    std::string getBlob(int idx) override { return m_query.value(idx).toByteArray().toStdString(); }
+    time_t getTime(int idx) override { return m_query.value(idx).toDateTime().toTime_t(); }
+    bool next() override { return m_query.next(); }
+private:
+    QSqlQuery m_query;
+};
 
-    bool operator==(const DatabaseConfig& rhs) const {
-        return m_type == rhs.m_type
-            && m_conn == rhs.m_conn
-            && m_user_name == rhs.m_user_name
-            && m_password == rhs.m_password
-            && m_databasename == rhs.m_databasename;
+class MySQLStmtRes : public ISQLData {
+friend class MySQLStmt;
+public:
+    typedef std::shared_ptr<MySQLStmtRes> ptr;
+    static MySQLStmtRes::ptr Create(std::shared_ptr<MySQLStmt> stmt);
+    ~MySQLStmtRes();
+    bool isValid() const override { return m_query.isValid(); }
+    QString lastError() const override { return m_query.lastError().text(); }
+    int getDataCount() override { return m_query.size(); }
+    int getColumnCount() override { return m_query.record().count(); }
+    int getColumnBytes(int idx) override { return m_query.record().field(idx).length(); }
+    QVariant::Type getColumnType(int idx) override { return m_query.record().field(idx).type(); }
+    QString getColumnName(int idx) override { return m_query.record().fieldName(idx); }
+    bool isNull(int idx) override { return m_query.isNull(idx); }
+    QVariant getValue(int idx) override { return m_query.value(idx); }
+    std::string getString(int idx) override { return m_query.value(idx).toString().toStdString(); }
+    std::string getBlob(int idx) override { return m_query.value(idx).toByteArray().toStdString(); }
+    time_t getTime(int idx) override { return m_query.value(idx).toDateTime().toTime_t(); }
+    bool next() override { return m_query.next(); }
+private:
+    MySQLStmtRes(std::shared_ptr<MySQLStmt> stmt);
+    struct Data {
+        Data();
+        ~Data();
+
+        bool is_null;
+        bool error;
+        QVariant value;
+    };
+    QSqlQuery m_query;
+    std::shared_ptr<MySQLStmt> m_stmt;
+    std::vector<Data> m_datas;
+};
+
+class MySQLTransaction : public ITransaction {
+};
+
+class MySQLStmt : public IStmt {
+public:
+    typedef std::shared_ptr<MySQLStmt> ptr;
+    static MySQLStmt::ptr Create(MySQL::ptr db, const QString& stmt);
+    QSqlQuery& getQuery() { return m_query; }
+private:
+    MySQLStmt(MySQL::ptr db);
+    MySQL::ptr m_mysql;
+    QSqlQuery m_query;
+};
+
+class MySQL : public IDB , public std::enable_shared_from_this<MySQL>{
+friend class MySQLManager;
+public:
+    typedef std::shared_ptr<MySQL> ptr;
+    MySQL(const std::string& name = "root") {
+        m_db = QSqlDatabase::addDatabase("QMYSQL", QString::fromStdString(name));
     }
-private:
-    std::string m_type; // 数据库类型
-    std::string m_conn; // 数据库连接
-    std::string m_user_name; // 数据库用户名
-    std::string m_password; // 数据库密码
-    std::string m_databasename; // 数据库名称
+    void init(const std::string& host, int port, const std::string& user, const std::string& password, const std::string& dbName) {
+        m_db.setHostName(QString::fromStdString(host));
+        m_db.setPort(port);
+        m_db.setUserName(QString::fromStdString(user));
+        m_db.setPassword(QString::fromStdString(password));
+        m_db.setDatabaseName(QString::fromStdString(dbName));
+    }
+    bool connect(const QString& host, int port, const QString& user, const QString& password, const QString& dbName) {
+        m_db.setHostName(host);
+        m_db.setPort(port);
+        m_db.setUserName(user);
+        m_db.setPassword(password);
+        m_db.setDatabaseName(dbName);
+        return m_db.open();
+    }
+    std::string getName() const { return m_name; }
+
+    int execute(const std::string& sql) override {
+        QSqlQuery query(m_db);
+        if (!query.exec(QString::fromStdString(sql))) {
+            return -1;  // Error
+        }
+        return query.numRowsAffected();
+    }
+
+    ISQLData::ptr query(const std::string& sql) override {
+        QSqlQuery qsqlQuery(m_db);
+        if (!qsqlQuery.exec(QString::fromStdString(sql))) {
+            return nullptr;  // Error
+        }
+        return std::make_shared<MySQLRes>(qsqlQuery);
+    }
+
+    QSqlDatabase& getDB() { return m_db; }
+    IStmt::ptr prepare(const QString& stmt) override { /* Implementation */ }
+    int getErrno() override { /* Implementation */ }
+    QString getErrStr() override { /* Implementation */ }
+    ITransaction::ptr openTransaction(bool auto_commit = false) override { /* Implementation */ }
+
+protected:
+    QSqlDatabase m_db;
+    MySQL::ptr m_root;
+    std::string m_name;
 };
 
-// 数据库类
-class Database {
-friend class DatabaseManager;
+class MySQLManager {
 public:
-    typedef std::shared_ptr<Database> ptr;
-    Database(const std::string& name = "root");
-    std::string getName() const { return m_name; } // 获取数据库名称
-    DatabaseConfig::ptr getConfig() const { return m_config; } // 获取数据库配置
-    void setConfig(const DatabaseConfig::ptr& config) { m_config = config; } // 设置数据库配置
-    void connect(); // 连接数据库
-private:
-    std::string m_name; // 数据库名称
-    Database::ptr m_root; // 默认数据库
-    DatabaseConfig::ptr m_config; // 数据库配置
-};
+    MySQLManager();
+    typedef std::shared_ptr<MySQLManager> ptr;
+    typedef Mutex MutexType;
 
-// 数据库管理类
-class DatabaseManager {
-public:
-    typedef std::shared_ptr<DatabaseManager> ptr;
-    typedef Spinlock MutexType;
-    Database::ptr getDatabase(const std::string& name); // 获取数据库对象
-    Database::ptr getRoot() const { return m_root; } // 获取默认数据库对象
-    DatabaseManager();
+    MySQL::ptr getMySQL(const std::string& name);
+    void del(const std::string& name);
+    MySQL::ptr getRoot() const { return m_root; }
 private:
-    std::map<std::string, Database::ptr> m_databases;
+    std::map<std::string, MySQL::ptr> m_databases;
+    MySQL::ptr m_root;
     MutexType m_mutex;
-    Database::ptr m_root;
 };
 
-typedef Feiteng::Singleton<DatabaseManager> DatabaseMgr;
-}
+typedef Feiteng::Singleton<MySQLManager> MySQLMgr;
 
+}
 #endif // DATABASE_H

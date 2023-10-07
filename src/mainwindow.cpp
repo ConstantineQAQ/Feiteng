@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 
 static Feiteng::Logger::ptr g_logger = FEITENG_LOG_NAME("mainwindow");
+Feiteng::Database::ptr g_database = FEITENG_DATABASE_NAME("mainwindow");
 QMetaObject::Connection connection;
 QMetaObject::Connection connection2;
 
@@ -13,6 +14,17 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     g_logger->addAppender(Feiteng::LogAppender::ptr(new Feiteng::FileLogAppender("../log/face.log"))); // 添加日志输出器
     g_logger->addAppender(Feiteng::LogAppender::ptr(new Feiteng::StdoutLogAppender)); // 添加日志输出器
+    serialConfigInit(); // 串口配置初始化
+    faceConfigInit(); // 人脸配置初始化
+    temperatureConfigInit(); // 体温配置初始化
+    FEITENG_CAMERA_OPEN(); // 打开摄像头
+    connect(Ftimer, SIGNAL(timeout()), this, SLOT(disPlayFrame()));
+    connect(this, &MainWindow::faceRecognitionDone, this, &MainWindow::handleFaceRecognitionDone);
+    Ftimer->start(33);
+}
+
+void MainWindow::serialConfigInit()
+{
     m_serial = Feiteng::Serial::ptr(new Feiteng::Serial());
     m_serial_config = Feiteng::Config::Lookup<Feiteng::SerialConfig>
     (
@@ -20,40 +32,46 @@ MainWindow::MainWindow(QWidget *parent)
         , Feiteng::SerialConfig("ttyUSB0")
         , "Serial config"
     );
+    m_serial_config->addListener([this](const Feiteng::SerialConfig& old_value, const Feiteng::SerialConfig& new_value) {
+        m_serial->setConfig(std::shared_ptr<Feiteng::SerialConfig>(
+            new Feiteng::SerialConfig(new_value)
+        ));
+    });
+    m_serial->setConfig(std::shared_ptr<Feiteng::SerialConfig>(new Feiteng::SerialConfig(m_serial_config->getValue())));
+}
+
+void MainWindow::faceConfigInit()
+{
+    m_face_config = Feiteng::Config::Lookup<Feiteng::FaceConfig>
+    (
+        "face_config" 
+        , Feiteng::FaceConfig()
+        , "Face config"
+    );
+    m_face = Feiteng::FaceInfo::ptr(new Feiteng::FaceInfo());
+    m_face->setConfig(std::shared_ptr<Feiteng::FaceConfig>(new Feiteng::FaceConfig(m_face_config->getValue())));
+    m_face_config->addListener([this](const Feiteng::FaceConfig& old_value, const Feiteng::FaceConfig& new_value) {
+        m_face->setConfig(std::shared_ptr<Feiteng::FaceConfig>(
+            new Feiteng::FaceConfig(new_value)
+        ));
+        FEITENG_LOG_INFO(g_logger) << "人脸配置已更新";
+    });
+}
+
+void MainWindow::temperatureConfigInit()
+{
     m_temperature_config = Feiteng::Config::Lookup<Feiteng::TemperatureConfig>
     (
         "serial.temperature_config" 
         , Feiteng::TemperatureConfig()
         , "Temperature config"
     );
-    m_serial_config->addListener([this](const Feiteng::SerialConfig& old_value, const Feiteng::SerialConfig& new_value) {
-        m_serial->setConfig(std::shared_ptr<Feiteng::SerialConfig>(
-            new Feiteng::SerialConfig(new_value)
-        ));
-    });
     m_temperature_config->addListener([this](const Feiteng::TemperatureConfig& old_value, const Feiteng::TemperatureConfig& new_value) {
         Ttimer->setInterval(new_value.getInterval());
     });
-    m_serial->setConfig(std::shared_ptr<Feiteng::SerialConfig>(new Feiteng::SerialConfig(m_serial_config->getValue())));
-    FEITENG_CAMERA_OPEN(); // 打开摄像头
-    m_face_config = Feiteng::Config::Lookup<Feiteng::FaceConfig>
-    (
-        "face_config" 
-        , Feiteng::FaceConfig()
-        , "Face config"
-    ); // 人脸配置
-    m_face = Feiteng::FaceInfo::ptr(new Feiteng::FaceInfo()); // 人脸信息
-    m_face->setConfig(std::shared_ptr<Feiteng::FaceConfig>(new Feiteng::FaceConfig(m_face_config->getValue()))); // 设置人脸配置
-    m_face_config->addListener([this](const Feiteng::FaceConfig& old_value, const Feiteng::FaceConfig& new_value) {
-        m_face->setConfig(std::shared_ptr<Feiteng::FaceConfig>(
-            new Feiteng::FaceConfig(new_value)
-        ));
-        FEITENG_LOG_INFO(g_logger) << "人脸配置已更新";
-    }); // 使用回调函数监听人脸配置
-    connect(Ftimer, SIGNAL(timeout()), this, SLOT(disPlayFrame()));
-    connect(this, &MainWindow::faceRecognitionDone, this, &MainWindow::handleFaceRecognitionDone);
-    Ftimer->start(33);
+    Ttimer->setInterval(m_temperature_config->getValue().getInterval());
 }
+
 
 MainWindow::~MainWindow()
 {

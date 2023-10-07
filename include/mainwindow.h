@@ -19,6 +19,7 @@
 #include "log.h"
 #include "person.h"
 #include "ui_mainwindow.h"
+#include "database.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -42,6 +43,10 @@ private slots:
 
 private:
     void processFaceRecognition();
+    void serialConfigInit(); // 串口配置初始化
+    void faceConfigInit(); // 人脸配置初始化
+    void temperatureConfigInit(); // 体温配置初始化
+    void databaseConfigInit(); // 数据库配置初始化
     // Q_INVOKABLE void updateFaceResultLabel(int label);
     int count; // 测温次数
     std::vector<double> bodyTempVec; // 体温数据
@@ -52,6 +57,7 @@ private:
     Feiteng::ConfigVar<Feiteng::SerialConfig>::ptr m_serial_config; // 串口配置
     Feiteng::ConfigVar<Feiteng::FaceConfig>::ptr m_face_config; // 人脸配置
     Feiteng::ConfigVar<Feiteng::TemperatureConfig>::ptr m_temperature_config; // 体温配置
+    Feiteng::ConfigVar<Feiteng::DatabaseConfig>::ptr m_database_config; // 数据库配置
     QTimer *Ttimer; // 温度定时器
     QTimer *Ftimer; // 人脸定时器
 };
