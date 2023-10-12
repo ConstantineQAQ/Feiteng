@@ -1,0 +1,3 @@
+temperature:
+  interval: 100
+  threshold: 37.5

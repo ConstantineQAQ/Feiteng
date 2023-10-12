@@ -1,5 +1,4 @@
 #include "admindialog.h"
-#include "ui_admindialog.h"
 
 AdminDialog::AdminDialog(QWidget *parent) :
     QDialog(parent),
@@ -10,5 +9,6 @@ AdminDialog::AdminDialog(QWidget *parent) :
 
 AdminDialog::~AdminDialog()
 {
+    FEITENG_CAMERA_OPEN();
     delete ui;
 }

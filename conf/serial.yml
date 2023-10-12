@@ -1,11 +1,8 @@
 serial:
-  serial_config:
-    port: ttyUSB0
+  - name: wendu
+    port: /dev/ttyUSB0
     baud_rate: 9600
     data_bits: 8
-    stop_bits: 1
     parity: 0
+    stop_bits: 1
     flow_control: 0
-  temperature_config:
-    interval: 200
-    threshold: 36

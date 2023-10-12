@@ -52,28 +52,20 @@ class IStmt {
 public:
     typedef std::shared_ptr<IStmt> ptr;
     virtual ~IStmt(){}
-    virtual int bindInt8(int idx, const int8_t& value) = 0;
-    virtual int bindUint8(int idx, const uint8_t& value) = 0;
-    virtual int bindInt16(int idx, const int16_t& value) = 0;
-    virtual int bindUint16(int idx, const uint16_t& value) = 0;
-    virtual int bindInt32(int idx, const int32_t& value) = 0;
-    virtual int bindUint32(int idx, const uint32_t& value) = 0;
-    virtual int bindInt64(int idx, const int64_t& value) = 0;
-    virtual int bindUint64(int idx, const uint64_t& value) = 0;
-    virtual int bindFloat(int idx, const float& value) = 0;
-    virtual int bindDouble(int idx, const double& value) = 0;
-    virtual int bindString(int idx, const char* value) = 0;
-    virtual int bindString(int idx, const std::string& value) = 0;
-    virtual int bindBlob(int idx, const void* value, int64_t size) = 0;
-    virtual int bindBlob(int idx, const std::string& value) = 0;
-    virtual int bindTime(int idx, const time_t& value) = 0;
-    virtual int bindNull(int idx) = 0;
+    virtual void bindInt(int idx, const int& value) = 0;
+    virtual void bindFloat(int idx, const float& value) = 0;
+    virtual void bindDouble(int idx, const double& value) = 0;
+    virtual void bindString(int idx, const char* value) = 0;
+    virtual void bindString(int idx, const std::string& value) = 0;
+    virtual void bindBlob(int idx, const void* value, int64_t size) = 0;
+    virtual void bindBlob(int idx, const std::string& value) = 0;
+    virtual void bindTime(int idx, const time_t& value) = 0;
+    virtual void bindNull(int idx) = 0;
 
     virtual int execute() = 0;
     virtual int64_t getLastInsertId() = 0;
     virtual ISQLData::ptr query() = 0;
 
-    virtual int getErrno() = 0;
     virtual std::string getErrStr() = 0;
 };
 

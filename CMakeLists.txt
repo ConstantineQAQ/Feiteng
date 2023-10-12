@@ -57,25 +57,19 @@ include_directories(
   )
 
 # Add new test executable
-add_executable(test_face tests/test_face.cpp)
-add_dependencies(test_face Feiteng)
-force_redefine_file_macro_for_sources(test_face) # __FILE__
-target_link_libraries(test_face PRIVATE Feiteng Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Sql Qt5::SerialPort ${OpenCV_LIBS} yaml-cpp pthread)
+add_executable(test_ui tests/test_ui.cpp)
+add_dependencies(test_ui Feiteng)
+force_redefine_file_macro_for_sources(test_ui) # __FILE__
+target_link_libraries(test_ui PRIVATE Feiteng Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Sql Qt5::SerialPort ${OpenCV_LIBS} yaml-cpp pthread)
+
+# Add new test executable
+add_executable(test_config tests/test_config.cpp)
+add_dependencies(test_config Feiteng)
+force_redefine_file_macro_for_sources(test_config) # __FILE__
+target_link_libraries(test_config PRIVATE Feiteng Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Sql Qt5::SerialPort ${OpenCV_LIBS} yaml-cpp pthread)
 
 # Add new test executable
 add_executable(test_database tests/test_database.cpp)
 add_dependencies(test_database Feiteng)
 force_redefine_file_macro_for_sources(test_database) # __FILE__
 target_link_libraries(test_database PRIVATE Feiteng Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Sql Qt5::SerialPort ${OpenCV_LIBS} yaml-cpp pthread)
-
-# Add new test executable
-add_executable(test_temperature tests/test_temperature.cpp)
-add_dependencies(test_temperature Feiteng)
-force_redefine_file_macro_for_sources(test_temperature) # __FILE__
-target_link_libraries(test_temperature PRIVATE Feiteng Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Sql Qt5::SerialPort ${OpenCV_LIBS} yaml-cpp pthread)
-
-# Add new test executable
-add_executable(test_ui tests/test_ui.cpp)
-add_dependencies(test_ui Feiteng)
-force_redefine_file_macro_for_sources(test_ui) # __FILE__
-target_link_libraries(test_ui PRIVATE Feiteng Qt5::Core Qt5::Gui Qt5::Widgets Qt5::Sql Qt5::SerialPort ${OpenCV_LIBS} yaml-cpp pthread)

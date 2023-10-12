@@ -1,8 +1,58 @@
 #include "face.h"
 
 static Feiteng::Logger::ptr g_logger = FEITENG_LOG_NAME("face");
+Feiteng::FaceConfig::ptr g_face_config = std::make_shared<Feiteng::FaceConfig>();
 
 namespace Feiteng {
+
+template<>
+class LexicalCast<Feiteng::FaceConfig, std::string> {
+public:
+    std::string operator()(const FaceConfig& v) {
+        YAML::Node node;
+        node["confidence"] = v.getConfidence();
+        node["ssim"] = v.getSSIM();
+        node["face_sum"] = v.getFaceSum();
+        node["face_size"] = v.getFaceSize();
+        node["scale_factor"] = v.getScaleFactor();
+        node["min_neighbors"] = v.getMinNeighbors();
+        node["face_path"] = v.getFacePath();
+        std::stringstream ss;
+        ss << node;
+        return ss.str();
+    }
+};
+
+template<>
+class LexicalCast<std::string, Feiteng::FaceConfig> {
+public:
+    FaceConfig operator()(const std::string& v) {
+        YAML::Node node = YAML::Load(v);
+        FaceConfig config;
+        config.setConfidence(node["confidence"].as<double>());
+        config.setSSIM(node["ssim"].as<double>());
+        config.setFaceSum(node["face_sum"].as<int>());
+        config.setFaceSize(node["face_size"].as<int>());
+        config.setScaleFactor(node["scale_factor"].as<double>());
+        config.setMinNeighbors(node["min_neighbors"].as<int>());
+        config.setFacePath(node["face_path"].as<std::string>());
+        return config;
+    }
+};
+
+Feiteng::ConfigVar<FaceConfig>::ptr g_face_define =
+    Feiteng::Config::Lookup("face", FaceConfig(), "face config");
+
+struct FaceIniter {
+    FaceIniter() {
+        g_face_define->addListener([](const FaceConfig& old_value, const FaceConfig& new_value){
+            FEITENG_LOG_INFO(FEITENG_LOG_ROOT()) << "face config changed";
+            g_face_config = std::make_shared<FaceConfig>(new_value);
+        });
+    }
+};
+
+static FaceIniter __face_initer;
 
 Face::Face()
 {
@@ -209,7 +259,6 @@ void FacePredict::predict(cv::Mat face_test)
         FEITENG_LOG_INFO(g_logger) << "label: " << m_label << " confidence: " << m_confidence;
     } else {
         m_confidence = -1;
-        FEITENG_LOG_ERROR(g_logger) << "未检测到人脸";
     }
 }
 }

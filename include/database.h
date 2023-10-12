@@ -29,6 +29,9 @@
 
 namespace Feiteng {
 
+class MySQL;
+class MySQLStmt;
+
 class MySQLRes : public ISQLData {
 public:
     typedef std::shared_ptr<MySQLRes> ptr;
@@ -70,11 +73,8 @@ public:
     time_t getTime(int idx) override { return m_query.value(idx).toDateTime().toTime_t(); }
     bool next() override { return m_query.next(); }
 private:
-    MySQLStmtRes(std::shared_ptr<MySQLStmt> stmt);
+    MySQLStmtRes(std::shared_ptr<MySQLStmt> stmt): m_stmt(stmt) {}
     struct Data {
-        Data();
-        ~Data();
-
         bool is_null;
         bool error;
         QVariant value;
@@ -84,70 +84,88 @@ private:
     std::vector<Data> m_datas;
 };
 
-class MySQLTransaction : public ITransaction {
-};
-
-class MySQLStmt : public IStmt {
-public:
-    typedef std::shared_ptr<MySQLStmt> ptr;
-    static MySQLStmt::ptr Create(MySQL::ptr db, const QString& stmt);
-    QSqlQuery& getQuery() { return m_query; }
-private:
-    MySQLStmt(MySQL::ptr db);
-    MySQL::ptr m_mysql;
-    QSqlQuery m_query;
-};
-
+class MySQLManager;
 class MySQL : public IDB , public std::enable_shared_from_this<MySQL>{
 friend class MySQLManager;
 public:
     typedef std::shared_ptr<MySQL> ptr;
-    MySQL(const std::string& name = "root") {
-        m_db = QSqlDatabase::addDatabase("QMYSQL", QString::fromStdString(name));
-    }
-    void init(const std::string& host, int port, const std::string& user, const std::string& password, const std::string& dbName) {
-        m_db.setHostName(QString::fromStdString(host));
-        m_db.setPort(port);
-        m_db.setUserName(QString::fromStdString(user));
-        m_db.setPassword(QString::fromStdString(password));
-        m_db.setDatabaseName(QString::fromStdString(dbName));
-    }
-    bool connect(const QString& host, int port, const QString& user, const QString& password, const QString& dbName) {
-        m_db.setHostName(host);
-        m_db.setPort(port);
-        m_db.setUserName(user);
-        m_db.setPassword(password);
-        m_db.setDatabaseName(dbName);
-        return m_db.open();
-    }
+    MySQL(const std::string& name = "root");
+    void init(const std::string& host, int port, const std::string& user, const std::string& password, const std::string& dbName);
+    bool connect();
     std::string getName() const { return m_name; }
 
-    int execute(const std::string& sql) override {
-        QSqlQuery query(m_db);
-        if (!query.exec(QString::fromStdString(sql))) {
-            return -1;  // Error
-        }
-        return query.numRowsAffected();
-    }
+    virtual int execute(const char* format, ...) override;
+    int execute(const char* format, va_list ap);
+    virtual int execute(const std::string& sql) override;
 
-    ISQLData::ptr query(const std::string& sql) override {
-        QSqlQuery qsqlQuery(m_db);
-        if (!qsqlQuery.exec(QString::fromStdString(sql))) {
-            return nullptr;  // Error
-        }
-        return std::make_shared<MySQLRes>(qsqlQuery);
-    }
+    ISQLData::ptr query(const char* format, ...) override;
+    ISQLData::ptr query(const char* format, va_list ap); 
+    ISQLData::ptr query(const std::string& sql) override;
 
     QSqlDatabase& getDB() { return m_db; }
-    IStmt::ptr prepare(const QString& stmt) override { /* Implementation */ }
-    int getErrno() override { /* Implementation */ }
-    QString getErrStr() override { /* Implementation */ }
-    ITransaction::ptr openTransaction(bool auto_commit = false) override { /* Implementation */ }
+    IStmt::ptr prepare(const QString& stmt) override;
+    int getErrno() override;
+    QString getErrStr() override;
+    ITransaction::ptr openTransaction(bool auto_commit = false) override;
+    int64_t getLastInsertId() override;
 
 protected:
-    QSqlDatabase m_db;
-    MySQL::ptr m_root;
-    std::string m_name;
+    QSqlDatabase m_db; // QT数据库连接
+    QSqlQuery m_query; // QT数据库查询
+    MySQL::ptr m_root; // 主数据库
+    std::string m_name; // 数据库连接名称
+};
+
+class MySQLTransaction : public ITransaction {
+public:
+    typedef std::shared_ptr<MySQLTransaction> ptr;
+    static MySQLTransaction::ptr Create(MySQL::ptr mysql, bool auto_commit);
+    virtual ~MySQLTransaction();
+
+    bool begin() override;
+    bool commit() override;
+    bool rollback() override;
+
+    virtual int execute(const std::string& sql) override;
+    int execute(const char* format, va_list ap);
+    virtual int execute(const char* format, ...) override;
+    int64_t getLastInsertId() override;
+    std::shared_ptr<MySQL> getMySQL();
+    bool isAutoCommit() const { return m_autoCommit;}
+    bool isFinished() const { return m_isFinished;}
+private:
+    MySQLTransaction(MySQL::ptr mysql, bool auto_commit): m_mysql(mysql), m_autoCommit(auto_commit), m_isFinished(false) {};
+private:
+    MySQL::ptr m_mysql;
+    bool m_autoCommit;
+    bool m_isFinished;
+};
+
+class MySQLStmt : public IStmt 
+    ,public std::enable_shared_from_this<MySQLStmt>{
+public:
+    typedef std::shared_ptr<MySQLStmt> ptr;
+    static MySQLStmt::ptr Create(MySQL::ptr db, const QString& stmt);
+    QSqlQuery& getQuery() { return m_query; }
+    void bindInt(int idx, const int& value) override { m_query.bindValue(idx, value); }
+    void bindFloat(int idx, const float& value) override { m_query.bindValue(idx, value); }
+    void bindDouble(int idx, const double& value) override { m_query.bindValue(idx, value); }
+    void bindString(int idx, const char* value) override { m_query.bindValue(idx, value); }
+    void bindString(int idx, const std::string& value) override { m_query.bindValue(idx, value.c_str()); }
+    void bindBlob(int idx, const void* value, int64_t size) override { m_query.bindValue(idx, QByteArray(static_cast<const char*>(value), size)); }
+    void bindBlob(int idx, const std::string& value) override { m_query.bindValue(idx, QByteArray(value.c_str(), value.size())); }
+    void bindTime(int idx, const time_t& value) override { m_query.bindValue(idx, QDateTime::fromTime_t(value)); }
+    void bindNull(int idx) override { m_query.bindValue(idx, QVariant::String); }
+
+    std::string getErrStr() override { return m_query.lastError().text().toStdString(); }
+
+    int execute() override;
+    int64_t getLastInsertId() override;
+    ISQLData::ptr query() override;
+private:
+    MySQLStmt(MySQL::ptr db) : m_mysql(db) {}
+    MySQL::ptr m_mysql;
+    QSqlQuery m_query;
 };
 
 class MySQLManager {

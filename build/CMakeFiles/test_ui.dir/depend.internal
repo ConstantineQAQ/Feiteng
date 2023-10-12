@@ -4,8 +4,10 @@
 CMakeFiles/test_ui.dir/test_ui_autogen/mocs_compilation.cpp.o
  /home/kylin/Feiteng/build/test_ui_autogen/mocs_compilation.cpp
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
+ /home/kylin/Feiteng/include/admindialog.h
  /home/kylin/Feiteng/include/config.h
  /home/kylin/Feiteng/include/database.h
+ /home/kylin/Feiteng/include/db.h
  /home/kylin/Feiteng/include/face.h
  /home/kylin/Feiteng/include/log.h
  /home/kylin/Feiteng/include/mainwindow.h
@@ -34,6 +36,7 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrentthreadengine.h
  /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrentversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QByteArray
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QDateTime
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
@@ -248,16 +251,21 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qpaintdevice.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qpainterpath.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qpalette.h
+ /usr/include/aarch64-linux-gnu/qt5/QtGui/qpen.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qpixelformat.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qpixmap.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qpolygon.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qregion.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qrgb.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qrgba64.h
+ /usr/include/aarch64-linux-gnu/qt5/QtGui/qtextcursor.h
+ /usr/include/aarch64-linux-gnu/qt5/QtGui/qtextformat.h
+ /usr/include/aarch64-linux-gnu/qt5/QtGui/qtextoption.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qtgui-config.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qtguiglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qtouchdevice.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qtransform.h
+ /usr/include/aarch64-linux-gnu/qt5/QtGui/qvalidator.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qvector2d.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qwindowdefs.h
  /usr/include/aarch64-linux-gnu/qt5/QtGui/qwindowdefs_win.h
@@ -267,18 +275,37 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtSerialPort/qserialportglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtSerialPort/qserialportinfo.h
  /usr/include/aarch64-linux-gnu/qt5/QtSql/QSqlDatabase
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/QSqlDriver
  /usr/include/aarch64-linux-gnu/qt5/QtSql/QSqlError
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/QSqlField
  /usr/include/aarch64-linux-gnu/qt5/QtSql/QSqlQuery
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/QSqlRecord
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/QSqlResult
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/QSqlTableModel
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/QtSql
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/QtSqlDepends
  /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqldatabase.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqldriver.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqldriverplugin.h
  /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqlerror.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqlfield.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqlindex.h
  /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqlquery.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqlquerymodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqlrecord.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqlrelationaldelegate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqlrelationaltablemodel.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqlresult.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qsqltablemodel.h
  /usr/include/aarch64-linux-gnu/qt5/QtSql/qtsql-config.h
  /usr/include/aarch64-linux-gnu/qt5/QtSql/qtsqlglobal.h
+ /usr/include/aarch64-linux-gnu/qt5/QtSql/qtsqlversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QApplication
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QDialog
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QGridLayout
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHBoxLayout
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLineEdit
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QMainWindow
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QMenuBar
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QMessageBox
@@ -288,26 +315,41 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QVBoxLayout
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QWidget
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qabstractbutton.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qabstractitemdelegate.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qabstractitemview.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qabstractslider.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qaction.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qactiongroup.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qapplication.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qboxlayout.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qcombobox.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qdesktopwidget.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qdialog.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qframe.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qgridlayout.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qitemdelegate.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlabel.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlayout.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlayoutitem.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlineedit.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlistview.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qmainwindow.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qmenu.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qmenubar.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qmessagebox.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qpushbutton.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qrubberband.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qslider.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qstatusbar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qstyle.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qstyleoption.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtabbar.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtabwidget.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qwidget.h
+ Feiteng_autogen/include/ui_admindialog.h
  Feiteng_autogen/include/ui_mainwindow.h

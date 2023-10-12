@@ -8,6 +8,11 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/kylin/Feiteng/include/admindialog.h",
+			"MU",
+			"6YEA5652QU/moc_admindialog.cpp"
+		],
+		[
 			"/home/kylin/Feiteng/include/config.h",
 			"MU",
 			"6YEA5652QU/moc_config.cpp"
@@ -17,6 +22,7 @@
 			"MU",
 			"6YEA5652QU/moc_database.cpp"
 		],
+		[ "/home/kylin/Feiteng/include/db.h", "MU", "6YEA5652QU/moc_db.cpp" ],
 		[ "/home/kylin/Feiteng/include/face.h", "MU", "6YEA5652QU/moc_face.cpp" ],
 		[ "/home/kylin/Feiteng/include/log.h", "MU", "6YEA5652QU/moc_log.cpp" ],
 		[
@@ -54,7 +60,6 @@
 		"Feiteng_EXPORTS",
 		"QT_CORE_LIB",
 		"QT_GUI_LIB",
-		"QT_NO_DEBUG",
 		"QT_SERIALPORT_LIB",
 		"QT_SQL_LIB",
 		"QT_WIDGETS_LIB"
@@ -112,6 +117,7 @@
 	"SETTINGS_FILE" : "/home/kylin/Feiteng/build/CMakeFiles/Feiteng_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/kylin/Feiteng/src/admindialog.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/config.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/database.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/face.cpp", "MU" ],

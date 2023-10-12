@@ -20,11 +20,14 @@
 #include "person.h"
 #include "ui_mainwindow.h"
 #include "database.h"
+#include "admindialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
+
+class FrameProcessor;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -34,32 +37,26 @@ public:
     ~MainWindow();
 signals:
     void faceRecognitionDone(int label, double confidence);
-public slots:
-    void disPlayFrame();
 private slots:
+    void updateFaceLabel(const QImage &image);
     void on_work_pushButton_clicked();
     void handleFaceRecognitionDone(int label, double confidence);
     void on_temper_pushButton_clicked();
+    void on_admin_pushButton_clicked();
 
 private:
     void processFaceRecognition();
-    void serialConfigInit(); // 串口配置初始化
-    void faceConfigInit(); // 人脸配置初始化
-    void temperatureConfigInit(); // 体温配置初始化
-    void databaseConfigInit(); // 数据库配置初始化
+    void processTemperature();
     // Q_INVOKABLE void updateFaceResultLabel(int label);
     int count; // 测温次数
     std::vector<double> bodyTempVec; // 体温数据
     Ui::MainWindow *ui;
     Feiteng::FaceInfo::ptr m_face; // 人脸信息
     Feiteng::Person::ptr m_person; // 人员信息
-    Feiteng::Serial::ptr m_serial; // 串口
-    Feiteng::ConfigVar<Feiteng::SerialConfig>::ptr m_serial_config; // 串口配置
-    Feiteng::ConfigVar<Feiteng::FaceConfig>::ptr m_face_config; // 人脸配置
-    Feiteng::ConfigVar<Feiteng::TemperatureConfig>::ptr m_temperature_config; // 体温配置
-    Feiteng::ConfigVar<Feiteng::DatabaseConfig>::ptr m_database_config; // 数据库配置
     QTimer *Ttimer; // 温度定时器
     QTimer *Ftimer; // 人脸定时器
+    QThread *m_thread; // 线程
+    FrameProcessor *m_frameProcessor; // 帧处理器
 };
 
 // 人脸识别确认弹窗
@@ -115,4 +112,24 @@ private:
     QPushButton *confirmButton;
     QPushButton *cancelButton;
 };
+
+class FrameProcessor : public QObject
+{
+    Q_OBJECT
+
+public:
+    explicit FrameProcessor(QObject *parent = nullptr) : QObject(parent) {}
+    void setFaceInfo(const Feiteng::FaceInfo::ptr& faceInfo) { m_face = faceInfo; }
+
+signals:
+    void frameProcessed(const QImage &image);
+
+public slots:
+    void processFrame();
+
+private:
+    Feiteng::FaceInfo::ptr m_face;
+};
+
+
 #endif // MAINWINDOW_H

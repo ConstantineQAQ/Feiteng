@@ -14,6 +14,7 @@
 #include <opencv4/opencv2/core/types.hpp>
 
 #include "singleton.h"
+#include "config.h"
 #include "log.h"
 
 
@@ -113,7 +114,8 @@ public:
     std::string getLabel() const { return m_label; }
     std::vector<cv::Rect> getFaces() const { return m_faces; } 
     std::vector<cv::Mat> getFaceROIs() const { return m_faceROIs; }
-    cv::Mat getFaceROI() const { return m_faceROI; } 
+    cv::Mat getFaceROI() const { return m_faceROI; }
+    std::shared_ptr<cv::CascadeClassifier> getFaceCascade() const { return m_face_cascade; } 
     void detectFace(); // 录入一张照片
     virtual ~FaceInfo() {}
 private:

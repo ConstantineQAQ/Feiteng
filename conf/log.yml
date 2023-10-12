@@ -1,0 +1,32 @@
+logs:
+  - name: root
+    level: debug
+    appenders:
+    - type: FileLogAppender
+      file: /home/kylin/Feiteng/log/root.log
+    - type: StdoutLogAppender
+  - name: database
+    level: debug
+    appenders:
+    - type: FileLogAppender
+      file: /home/kylin/Feiteng/log/database.log
+      formatter: '%d%T[%p]%T%m%n'
+    - type: StdoutLogAppender
+  - name: face
+    level: debug
+    appenders:
+    - type: FileLogAppender
+      file: /home/kylin/Feiteng/log/face.log
+    - type: StdoutLogAppender
+  - name: mainwindow
+    level: debug
+    appenders:
+    - type: FileLogAppender
+      file: /home/kylin/Feiteng/log/mainwindow.log
+    - type: StdoutLogAppender
+  - name: temperature
+    level: debug
+    appenders:
+    - type: FileLogAppender
+      file: /home/kylin/Feiteng/log/temperature.log
+    - type: StdoutLogAppender

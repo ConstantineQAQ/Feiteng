@@ -608,7 +608,7 @@ namespace Feiteng {
         bool operator==(const LogDefine& oth) const {
             return name == oth.name
                    && level == oth.level
-                   && formatter == oth.formatter
+                   && formatter == oth.formatter    
                    && appenders == oth.appenders;
         }
 

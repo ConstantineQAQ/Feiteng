@@ -1,6 +1,7 @@
-db_config:
-  username: kylin
-  password: kylin
-  hostname: localhost
-  type: QMYSQL
-  database: admindatabase
+databases:
+  - name: feiteng
+    username: kylin
+    passwd: kylin
+    hostname: localhost
+    type: QMYSQL
+    database: admindatabase

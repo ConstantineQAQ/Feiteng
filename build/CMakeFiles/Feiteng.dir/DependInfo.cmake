@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kylin/Feiteng/build/Feiteng_autogen/mocs_compilation.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/Feiteng_autogen/mocs_compilation.cpp.o"
+  "/home/kylin/Feiteng/src/admindialog.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/admindialog.cpp.o"
   "/home/kylin/Feiteng/src/config.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/config.cpp.o"
   "/home/kylin/Feiteng/src/database.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/database.cpp.o"
   "/home/kylin/Feiteng/src/face.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/face.cpp.o"
@@ -23,7 +24,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "Feiteng_EXPORTS"
   "QT_CORE_LIB"
   "QT_GUI_LIB"
-  "QT_NO_DEBUG"
   "QT_SERIALPORT_LIB"
   "QT_SQL_LIB"
   "QT_WIDGETS_LIB"

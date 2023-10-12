@@ -17,6 +17,13 @@
 #include "log.h"
 #include "thread.h"
 #include "util.h"
+#include "config.h"
+
+#define FEITENG_SERIAL_ROOT() Feiteng::SerialMgr::GetInstance()->getRoot()
+#define FEITENG_SERIAL_NAME(name) Feiteng::SerialMgr::GetInstance()->getSerial(name)
+#define FEITENG_SERIAL_OPEN(name) Feiteng::SerialMgr::GetInstance()->getSerial(name)->Sopen()
+#define FEITENG_SERIAL_EARSE(name) Feiteng::SerialMgr::GetInstance()->delSerila(name)
+#define FEITENG_SERIAL_CLOSE(name) Feiteng::SerialMgr::GetInstance()->getSerial(name)->Sclose()
 
 namespace Feiteng
 {
@@ -29,20 +36,24 @@ class SerialConfig {
 public:
     typedef std::shared_ptr<SerialConfig> ptr;
     SerialConfig(const std::string& portName = "COM1", int baudRate = 9600,
-                 int dataBits = 8, int parity = 0, int stopBits = 1, int flowControl = 0)
+                 int dataBits = 8, int parity = 0, int stopBits = 1, int flowControl = 0, 
+                 const std::string& name = "root")
         : m_portName(portName)
         , m_baudRate(baudRate)
         , m_dataBits(dataBits)
         , m_parity(parity)
         , m_stopBits(stopBits)
-        , m_flowControl(flowControl) {
+        , m_flowControl(flowControl) 
+        , m_name(name){
     }
+    const std::string getName() const { return m_name; }
     const std::string& getPortName() const { return m_portName; }
     const int getBaudRate() const { return m_baudRate; }
     const int getDataBits() const { return m_dataBits; }
     const int getParity() const { return m_parity; }
     const int getStopBits() const { return m_stopBits; }
     const int getFlowControl() const { return m_flowControl; }
+    void setName(const std::string& v) { m_name = v; }
     void setPortName(const std::string& v) { m_portName = v; }
     void setBaudRate(int v) { m_baudRate = v; }
     void setDataBits(int v) { m_dataBits = v; }
@@ -56,9 +67,14 @@ public:
             && m_dataBits == rhs.m_dataBits
             && m_parity == rhs.m_parity
             && m_stopBits == rhs.m_stopBits
-            && m_flowControl == rhs.m_flowControl;
+            && m_flowControl == rhs.m_flowControl
+            && m_name == rhs.m_name;
+    }
+    bool operator<(const SerialConfig& rhs) const {
+        return m_name < rhs.m_name;
     }
 private:
+    std::string m_name; // 串口配置名称
     std::string m_portName; // 串口名称
     int m_baudRate; // 波特率
     int m_dataBits; // 数据位
@@ -67,8 +83,9 @@ private:
     int m_flowControl; // 流控制
 };
 
-class Serial : public QObject{
+class Serial : public QObject , public std::enable_shared_from_this<Serial>{
 Q_OBJECT
+friend class SerialManager;
 public:
     typedef std::shared_ptr<Serial> ptr;
     typedef Mutex MutexType;
@@ -82,7 +99,8 @@ public:
     void Sopen();
     void Sclose();
     QSerialPort* getSerial() const { return m_serial; }
-    Serial();
+    Serial(const std::string& name = "root");
+    const std::string getName() const { return m_name; }
     // 将配置应用于串口
     void applyConfig() {
         if(m_config) {
@@ -97,18 +115,12 @@ public:
     }
 
 private:
+    std::string m_name; // 串口名称
     SerialConfig::ptr m_config; // 串口配置
     QSerialPort *m_serial; // 串口
     MutexType m_mutex; // 互斥锁
+    Serial::ptr m_root; // 主串口
 };
-
-enum class TempMode {
-    Body = 0,
-    Object = 1
-};
-
-class BodyTemp;
-class ObjectTemp;
 
 class TemperatureConfig {
 public:
@@ -131,6 +143,9 @@ private:
     double m_threshold; // 阈值
 };
 
+class BodyTemp;
+class ObjectTemp;
+
 class Temperature : public QObject
 {
 Q_OBJECT
@@ -145,21 +160,9 @@ public:
     Serial::ptr getSerial() const { return m_serial; }
     TemperatureConfig::ptr getConfig() const { return m_config; }
     Temperature();
-    static ptr create(TempMode mode) {
-        if (mode == TempMode::Body) {
-            return std::static_pointer_cast<Temperature>(std::make_shared<BodyTemp>());
-        }
-        else if (mode == TempMode::Object) {
-            return std::static_pointer_cast<Temperature>(std::make_shared<ObjectTemp>());
-        }
-        else {
-            return nullptr;
-        }
-    }
 
 protected:
     MutexType m_mutex; // 互斥锁
-    double m_temperature; // 温度
     TemperatureConfig::ptr m_config; // 温度配置
     Serial::ptr m_serial; // 串口
 };
@@ -171,6 +174,7 @@ public:
     typedef std::shared_ptr<BodyTemp> ptr;
     bool isTemperatureNormal();
     double getBodyTemperature() const { return m_bodyTemperature; }
+    static ptr create() { return std::make_shared<BodyTemp>(); }
 public slots:
     void fetchTemperature();
 private:
@@ -183,42 +187,28 @@ Q_OBJECT
 public:
     typedef std::shared_ptr<ObjectTemp> ptr;
     bool isTemperatureNormal();
+    static ptr create() { return std::make_shared<ObjectTemp>();}
 public slots:
     void fetchTemperature();
 };
 
+class SerialManager {
+public:
+    SerialManager();
+    typedef std::shared_ptr<SerialManager> ptr;
+    typedef Spinlock MutexType;
+    Serial::ptr getSerial(const std::string& name);
+    Serial::ptr getRoot() const { return m_root; }
+    void delSerila(const std::string& name);
+    std::string toYamlString();
+private:
+    MutexType m_mutex;
+    std::map<std::string, Serial::ptr> m_serials;
+    Serial::ptr m_root;
+};
+
+typedef Singleton<SerialManager> SerialMgr;
+
 } // namespace Feiteng
-
-
-/**
- * void UserDialog::onSerialDataReceived()
-{
-    QByteArray data = serial->readAll();
-    qDebug() << "raw data:" << data.toHex();
-
-    if(data.size() >=9 && data.at(0) == static_cast<char>(0xFE)){
-            if(data.at(1) == static_cast<char>(0xAC) && currentMode == TempMode::Body){
-                int bodyTempInt = static_cast<unsigned char>(data.at(2));
-                int bodyTempDec = static_cast<unsigned char>(data.at(3));
-                double bodyTemp = bodyTempInt + bodyTempDec * 0.01;
-                qDebug() << "Body temperature:" << bodyTemp << "C";
-                ui->temp_label->setText(QString("人体温度 %1C").arg(bodyTemp,0,'f',1));
-            }
-        else if(data.at(1) == static_cast<char>(0xAA) && currentMode == TempMode::Object){
-                int objectTempInt = static_cast<unsigned char>(data.at(2));
-                int objectTempDec = static_cast<unsigned char>(data.at(3));
-                double objectTemp = objectTempInt + objectTempDec * 0.01;
-                qDebug() << "Object temperature:" << objectTemp << "C";
-                ui->temp_label->setText(QString("物体温度 %1C").arg(objectTemp,0,'f',1));
-        }
-    }
-}
-
-void UserDialog::onTimerTimeout()
-{
-    QByteArray startMeasuringCmd = QByteArray::fromHex("FACAC4");
-    serial->write(startMeasuringCmd);
-}
-*/
 
 #endif // TEMPERATURE_H

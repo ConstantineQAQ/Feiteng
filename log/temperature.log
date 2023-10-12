@@ -1,0 +1,326 @@
+2023-10-12 16:27:48	23313	0	[INFO]	[temperature]	src/temperature.cpp:200	串口打开成功
+2023-10-12 16:27:49	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:50	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:50	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:27:51	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:51	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:27:52	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:52	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:27:53	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:53	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:27:54	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:55	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:55	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:27:56	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:56	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:27:57	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:57	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:27:57	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:58	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:27:58	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:27:59	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:00	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:28:00	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:01	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:28:01	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:02	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:28:02	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:03	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.2C
+2023-10-12 16:28:03	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:04	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:05	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:06	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.3C
+2023-10-12 16:28:07	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:07	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.2C
+2023-10-12 16:28:08	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:08	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.2C
+2023-10-12 16:28:09	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:10	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:10	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.2C
+2023-10-12 16:28:11	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:11	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.2C
+2023-10-12 16:28:12	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:12	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.2C
+2023-10-12 16:28:12	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:13	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.2C
+2023-10-12 16:28:13	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:14	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:15	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.1C
+2023-10-12 16:28:15	23313	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:28:16	23313	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.6C
+2023-10-12 16:56:24	31877	0	[INFO]	[temperature]	src/temperature.cpp:200	串口打开成功
+2023-10-12 16:56:25	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:25	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:56:26	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:26	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 16:56:27	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:27	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 33.3C
+2023-10-12 16:56:28	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:29	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:29	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 16:56:30	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:30	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 16:56:31	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:31	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 16:56:32	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:32	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 16:56:33	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:34	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:34	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 16:56:35	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:36	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 16:56:36	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:36	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.5C
+2023-10-12 16:56:37	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:38	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.5C
+2023-10-12 16:56:38	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:39	31877	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 16:56:40	31877	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 22:03:56	8555	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-12 22:04:15	8555	0	[INFO]	[temperature]	src/temperature.cpp:200	串口打开成功
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 22:04:16	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:17	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 34.4C
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.6C
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.5C
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:18	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.6C
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.6C
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:19	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.7C
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.7C
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.8C
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:20	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:21	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:21	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:21	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.8C
+2023-10-12 22:04:21	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:21	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:21	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:21	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:21	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.8C
+2023-10-12 22:04:21	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.8C
+2023-10-12 22:04:22	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.3C
+2023-10-12 22:04:49	8555	0	[ERROR]	[temperature]	src/temperature.cpp:193	串口已打开
+2023-10-12 22:04:49	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:49	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:49	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:49	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:49	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:49	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 34.7C
+2023-10-12 22:04:49	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:49	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:49	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.8C
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.1C
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.3C
+2023-10-12 22:04:50	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:51	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 22:04:52	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:53	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:53	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:53	8555	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 22:04:53	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 22:04:53	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 22:04:54	8555	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.4C
+2023-10-12 23:06:00	23733	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-12 23:09:34	31000	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-12 23:10:54	38065	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-12 23:12:11	48153	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-12 23:18:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-12 23:18:57	64121	0	[INFO]	[temperature]	src/temperature.cpp:200	串口打开成功
+2023-10-12 23:18:57	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:57	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:58	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:18:59	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:00	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 33.9C
+2023-10-12 23:19:01	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.8C
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.7C
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:02	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.7C
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.7C
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.8C
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:03	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.8C
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 35.8C
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:04	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 32.6C
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 257.6C
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:05	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:06	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:06	64121	0	[INFO]	[temperature]	src/temperature.cpp:170	串口写入成功
+2023-10-12 23:19:06	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 32.5C
+2023-10-12 23:19:06	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.7C
+2023-10-12 23:19:07	64121	0	[INFO]	[temperature]	src/temperature.cpp:140	人体温度 36.5C
+2023-10-12 23:37:17	107909	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-12 23:39:11	112094	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-13 00:07:09	148329	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-13 00:11:33	156581	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-13 00:16:47	209944	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-13 00:18:43	222977	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-13 00:19:54	240816	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]
+2023-10-13 00:21:03	247863	0	[INFO]	[temperature]	src/temperature.cpp:121	temperature config changed: [TemperatureConfig interval=100 threshold=37.5]]

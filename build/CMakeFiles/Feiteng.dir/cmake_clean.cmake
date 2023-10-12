@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Feiteng_autogen.dir/ParseCache.txt"
   "Feiteng_autogen"
   "CMakeFiles/Feiteng.dir/Feiteng_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/Feiteng.dir/src/admindialog.cpp.o"
   "CMakeFiles/Feiteng.dir/src/config.cpp.o"
   "CMakeFiles/Feiteng.dir/src/database.cpp.o"
   "CMakeFiles/Feiteng.dir/src/face.cpp.o"

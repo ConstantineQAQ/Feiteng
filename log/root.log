@@ -1,0 +1,4 @@
+2023-10-12 16:06:09	8836	0	[INFO]	[root]	tests/test_config.cpp:27	============================================
+2023-10-12 16:06:09	8836	0	[INFO]	[root]	tests/test_config.cpp:28	[FaceConfig faceSum=5 faceSize=100 confidence=70.12 SSIM=0.92 scaleFactor=1.1 minNeighbors=3 facePath=/home/kylin/Feiteng/face]
+2023-10-12 16:06:09	8836	0	[INFO]	[root]	tests/test_config.cpp:29	[SerialConfig port=/dev/ttyUSB0 baudRate=9600 dataBits=8 parity=0 stopBits=1 flowControl=0]
+2023-10-12 16:06:09	8836	0	[INFO]	[root]	tests/test_config.cpp:30	1

@@ -1,5 +1,7 @@
 #include "person.h"
 
+extern Feiteng::BodyTemp::ptr g_body_temp;
+
 namespace Feiteng
 {
 Feiteng::Person::Person(std::string name, std::string id, std::string department)
@@ -8,7 +10,7 @@ Feiteng::Person::Person(std::string name, std::string id, std::string department
 ,m_department(department)
 {
     m_face = FaceInfo::ptr(new FaceInfo(m_name));
-    m_temperature = Temperature::create(TempMode::Body);
+    m_temperature = g_body_temp;
 }
 
 }

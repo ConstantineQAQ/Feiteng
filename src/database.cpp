@@ -78,7 +78,7 @@ struct DatabaseInit {
     DatabaseInit() {
         g_database_defines->addListener([](const std::set<DatabaseDefine>& old_value
                     , const std::set<DatabaseDefine>& new_value){
-                FEITENG_LOG_INFO(g_logger) << "on_database_conf_changed";
+                FEITENG_LOG_INFO(FEITENG_LOG_ROOT()) << "on_database_conf_changed";
                 for(auto& i : new_value) {
                     auto it = old_value.find(i);
                     Feiteng::MySQL::ptr mysql;
@@ -107,6 +107,9 @@ struct DatabaseInit {
         });
     }
 };
+
+static DatabaseInit __database_init;
+
 MySQLManager::MySQLManager()
 {
     m_root.reset(new MySQL);
@@ -154,6 +157,7 @@ MySQLStmtRes::ptr MySQLStmtRes::Create(std::shared_ptr<MySQLStmt> stmt)
     }
     return rt;
 }
+MySQLStmtRes::~MySQLStmtRes(){}
 MySQLStmt::ptr MySQLStmt::Create(MySQL::ptr db, const QString &stmt)
 {
     MySQLStmt::ptr rt(new MySQLStmt(db));
@@ -166,5 +170,203 @@ MySQLStmt::ptr MySQLStmt::Create(MySQL::ptr db, const QString &stmt)
     }
     rt->m_query = query;
     return rt;
+}
+int MySQLStmt::execute()
+{
+    bool success = m_query.exec();
+    if (!success) {
+        FEITENG_LOG_ERROR(g_logger) << "stmt= " << m_query.lastQuery().toStdString() << " error: " << m_query.lastError().text().toStdString();
+        return -1;
+    }
+    return 0;
+}
+int64_t MySQLStmt::getLastInsertId()
+{
+    return m_query.lastInsertId().toLongLong();
+}
+ISQLData::ptr MySQLStmt::query()
+{
+    return MySQLStmtRes::Create(shared_from_this());
+}
+MySQLTransaction::ptr MySQLTransaction::Create(MySQL::ptr mysql, bool auto_commit)
+{
+    MySQLTransaction::ptr rt(new MySQLTransaction(mysql,auto_commit));
+    if(rt->begin()) {
+        return rt;
+    }
+    return nullptr;
+}
+MySQLTransaction::~MySQLTransaction()
+{
+    if(m_autoCommit) {
+        commit();
+    } else {
+        rollback();
+    }
+}
+
+bool MySQLTransaction::begin()
+{
+    int rt = execute("BEGIN");
+    return rt == 0;
+}
+
+bool MySQLTransaction::commit()
+{
+    int rt = execute("COMMIT");
+    if(rt == 0) {
+        m_isFinished = true;
+    }
+    return rt == 0;
+}
+
+bool MySQLTransaction::rollback()
+{
+    if(m_isFinished) return true;
+    int rt = execute("ROLLBACK");
+    if(rt == 0) {
+        m_isFinished = true;
+    }
+    return rt == 0;
+}
+
+int MySQLTransaction::execute(const std::string &sql)
+{
+    if(m_isFinished) {
+        FEITENG_LOG_ERROR(g_logger) << "transaction is finished, sql: " << sql;
+        return -1;
+    }
+    int rt = m_mysql->execute(sql);
+    return rt;
+}
+
+int MySQLTransaction::execute(const char *format, va_list ap)
+{
+    if(m_isFinished) {
+        FEITENG_LOG_ERROR(g_logger) << "transaction is finished, sql: " << format;
+        return -1;
+    }
+    int rt = m_mysql->execute(format, ap);
+    return rt;
+}
+
+int MySQLTransaction::execute(const char *format, ...)
+{
+    va_list ap;
+    va_start(ap, format);
+    return execute(format, ap);
+}
+
+int64_t MySQLTransaction::getLastInsertId()
+{
+    return m_mysql->getLastInsertId();
+}
+std::shared_ptr<MySQL> MySQLTransaction::getMySQL()
+{
+    return m_mysql;
+}
+MySQL::MySQL(const std::string &name):m_name(name)
+{
+    m_db = QSqlDatabase::addDatabase("QMYSQL", QString::fromStdString(name));
+}
+void MySQL::init(const std::string &host, int port, const std::string &user, const std::string &password, const std::string &dbName)
+{
+    m_db.setHostName(QString::fromStdString(host));
+    m_db.setPort(port);
+    m_db.setUserName(QString::fromStdString(user));
+    m_db.setPassword(QString::fromStdString(password));
+    m_db.setDatabaseName(QString::fromStdString(dbName));
+}
+bool MySQL::connect()
+{
+    if(m_db.open()) {
+        FEITENG_LOG_INFO(g_logger) << "数据库连接成功";
+        return true;
+    } else {
+        FEITENG_LOG_ERROR(g_logger) << "数据库连接失败" << m_db.lastError().text().toStdString();
+        return false;
+    }
+    return false;
+}
+int MySQL::execute(const char *format, ...)
+{
+    va_list ap;
+    va_start(ap, format);
+    int rt = execute(format, ap);
+    va_end(ap);
+    return rt;
+}
+int MySQL::execute(const char *format, va_list ap)
+{
+    char* buf = nullptr;
+    int len = vasprintf(&buf, format, ap);
+    if(len == -1) {
+        FEITENG_LOG_ERROR(g_logger) << "vasprintf error format=" << format;
+        return -1;
+    }
+    std::string sql;
+    sql.assign(buf, len);
+    free(buf);
+    return execute(sql);
+}
+int MySQL::execute(const std::string &sql)
+{
+    QSqlQuery query(m_db);
+    if (!query.exec(QString::fromStdString(sql))) {
+        FEITENG_LOG_ERROR(g_logger) << "sql= " << sql << " error: " << query.lastError().text().toStdString();
+        return -1;
+    }
+    return 0;
+}
+ISQLData::ptr MySQL::query(const char *format, ...)
+{
+    va_list ap;
+    va_start(ap, format);
+    ISQLData::ptr rt = query(format, ap);
+    va_end(ap);
+    return rt;
+}
+ISQLData::ptr MySQL::query(const char *format, va_list ap)
+{
+    char* buf = nullptr;
+    int len = vasprintf(&buf, format, ap);
+    if(len == -1) {
+        FEITENG_LOG_ERROR(g_logger) << "vasprintf error format=" << format;
+        return nullptr;
+    }
+    std::string sql;
+    sql.assign(buf, len);
+    free(buf);
+    return query(sql);
+}
+ISQLData::ptr MySQL::query(const std::string &sql)
+{
+    QSqlQuery query(m_db);
+    if (!query.exec(QString::fromStdString(sql))) {
+        FEITENG_LOG_ERROR(g_logger) << "sql= " << sql << " error: " << query.lastError().text().toStdString();
+        return nullptr;
+    }
+    MySQLRes::ptr rt(new MySQLRes(query));
+    return rt;
+}
+IStmt::ptr MySQL::prepare(const QString &stmt)
+{
+    return MySQLStmt::Create(shared_from_this(), stmt);
+}
+int MySQL::getErrno()
+{
+    return m_db.lastError().number();
+}
+QString MySQL::getErrStr()
+{
+    return m_db.lastError().text();
+}
+ITransaction::ptr MySQL::openTransaction(bool auto_commit)
+{
+    return MySQLTransaction::Create(shared_from_this(), auto_commit);
+}
+int64_t MySQL::getLastInsertId()
+{
+    return m_query.lastInsertId().toLongLong();
 }
 }

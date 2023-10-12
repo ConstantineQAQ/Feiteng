@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+#include "face.h"
+#include "ui_admindialog.h"
+
 namespace Ui {
 class AdminDialog;
 }
