@@ -76,8 +76,10 @@ Thumbs.db
 *.suo
 *.vscode
 
+/log
 /lib
 /build
+/face
 
 # qtcreator generated files
 *.pro.user*
