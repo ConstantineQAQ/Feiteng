@@ -8,6 +8,11 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/kylin/Feiteng/include/addstudentdialog.h",
+			"MU",
+			"6YEA5652QU/moc_addstudentdialog.cpp"
+		],
+		[
 			"/home/kylin/Feiteng/include/admindialog.h",
 			"MU",
 			"6YEA5652QU/moc_admindialog.cpp"
@@ -39,6 +44,11 @@
 			"/home/kylin/Feiteng/include/singleton.h",
 			"MU",
 			"6YEA5652QU/moc_singleton.cpp"
+		],
+		[
+			"/home/kylin/Feiteng/include/studeninfodialog.h",
+			"MU",
+			"6YEA5652QU/moc_studeninfodialog.cpp"
 		],
 		[
 			"/home/kylin/Feiteng/include/temperature.h",
@@ -117,6 +127,7 @@
 	"SETTINGS_FILE" : "/home/kylin/Feiteng/build/CMakeFiles/Feiteng_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "/home/kylin/Feiteng/src/addstudentdialog.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/admindialog.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/config.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/database.cpp", "MU" ],
@@ -125,6 +136,7 @@
 		[ "/home/kylin/Feiteng/src/main.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/mainwindow.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/person.cpp", "MU" ],
+		[ "/home/kylin/Feiteng/src/studeninfodialog.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/temperature.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/thread.cpp", "MU" ],
 		[ "/home/kylin/Feiteng/src/util.cpp", "MU" ]

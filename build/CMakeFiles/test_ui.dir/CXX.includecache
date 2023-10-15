@@ -6,13 +6,49 @@
 
 #IncludeRegexTransform: 
 
-/home/kylin/Feiteng/include/admindialog.h
+/home/kylin/Feiteng/include/addstudentdialog.h
 QDialog
+-
+QTimer
+-
+QThread
+-
+QMessageBox
+-
+QPixmap
+-
+QImage
+-
+QtConcurrent/QtConcurrent
+-
+QtConcurrent/QtConcurrentRun
 -
 face.h
 /home/kylin/Feiteng/include/face.h
+log.h
+/home/kylin/Feiteng/include/log.h
+person.h
+/home/kylin/Feiteng/include/person.h
+database.h
+/home/kylin/Feiteng/include/database.h
+ui_addstudentdialog.h
+/home/kylin/Feiteng/include/ui_addstudentdialog.h
+
+/home/kylin/Feiteng/include/admindialog.h
+QDialog
+-
+QMessageBox
+-
+QString
+-
+face.h
+/home/kylin/Feiteng/include/face.h
+log.h
+/home/kylin/Feiteng/include/log.h
 ui_admindialog.h
 /home/kylin/Feiteng/include/ui_admindialog.h
+studeninfodialog.h
+/home/kylin/Feiteng/include/studeninfodialog.h
 
 /home/kylin/Feiteng/include/config.h
 memory
@@ -114,6 +150,8 @@ vector
 string
 -
 memory
+-
+filesystem
 -
 opencv4/opencv2/opencv.hpp
 -
@@ -225,6 +263,26 @@ temperature.h
 /home/kylin/Feiteng/include/singleton.h
 memory
 -
+
+/home/kylin/Feiteng/include/studeninfodialog.h
+QDialog
+-
+QMessageBox
+-
+QString
+-
+QTableWidgetItem
+-
+QTableWidget
+-
+database.h
+/home/kylin/Feiteng/include/database.h
+log.h
+/home/kylin/Feiteng/include/log.h
+addstudentdialog.h
+/home/kylin/Feiteng/include/addstudentdialog.h
+ui_studeninfodialog.h
+/home/kylin/Feiteng/include/ui_studeninfodialog.h
 
 /home/kylin/Feiteng/include/temperature.h
 QDialog
@@ -339,6 +397,10 @@ qtconcurrentversion.h
 /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/QtConcurrentDepends
 QtCore/QtCore
 -
+
+/usr/include/aarch64-linux-gnu/qt5/QtConcurrent/QtConcurrentRun
+qtconcurrentrun.h
+/usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrentrun.h
 
 /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrent_global.h
 QtCore/qglobal.h
@@ -491,6 +553,10 @@ qdatetime.h
 /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
 qobject.h
 /usr/include/aarch64-linux-gnu/qt5/QtCore/qobject.h
+
+/usr/include/aarch64-linux-gnu/qt5/QtCore/QString
+qstring.h
+/usr/include/aarch64-linux-gnu/qt5/QtCore/qstring.h
 
 /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
 qstringlist.h
@@ -2994,6 +3060,10 @@ qapplication.h
 qdialog.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qdialog.h
 
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/QFrame
+qframe.h
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qframe.h
+
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QGridLayout
 qgridlayout.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qgridlayout.h
@@ -3001,6 +3071,10 @@ qgridlayout.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHBoxLayout
 qboxlayout.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qboxlayout.h
+
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHeaderView
+qheaderview.h
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qheaderview.h
 
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel
 qlabel.h
@@ -3033,6 +3107,14 @@ qlayoutitem.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QStatusBar
 qstatusbar.h
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qstatusbar.h
+
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/QTableWidget
+qtablewidget.h
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtablewidget.h
+
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/QTableWidgetItem
+qtablewidget.h
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtablewidget.h
 
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QVBoxLayout
 qboxlayout.h
@@ -3182,6 +3264,12 @@ QtWidgets/qlayout.h
 QtWidgets/qwidget.h
 -
 limits.h
+-
+
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qheaderview.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qabstractitemview.h
 -
 
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qitemdelegate.h
@@ -3366,6 +3454,22 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qwidget.h
 -
 
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtableview.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qabstractitemview.h
+-
+
+/usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtablewidget.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qtableview.h
+-
+QtCore/qvariant.h
+-
+QtCore/qvector.h
+-
+
 /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtabwidget.h
 QtWidgets/qtwidgetsglobal.h
 -
@@ -3414,6 +3518,30 @@ QtGui/qkeysequence.h
 QtGui/qevent.h
 -
 
+Feiteng_autogen/include/ui_addstudentdialog.h
+QtCore/QVariant
+-
+QtWidgets/QApplication
+-
+QtWidgets/QDialog
+-
+QtWidgets/QFrame
+-
+QtWidgets/QGridLayout
+-
+QtWidgets/QHBoxLayout
+-
+QtWidgets/QLabel
+-
+QtWidgets/QLineEdit
+-
+QtWidgets/QPushButton
+-
+QtWidgets/QSpacerItem
+-
+QtWidgets/QVBoxLayout
+-
+
 Feiteng_autogen/include/ui_admindialog.h
 QtCore/QVariant
 -
@@ -3460,5 +3588,31 @@ QtWidgets/QStatusBar
 QtWidgets/QVBoxLayout
 -
 QtWidgets/QWidget
+-
+
+Feiteng_autogen/include/ui_studeninfodialog.h
+QtCore/QVariant
+-
+QtWidgets/QApplication
+-
+QtWidgets/QDialog
+-
+QtWidgets/QGridLayout
+-
+QtWidgets/QHBoxLayout
+-
+QtWidgets/QHeaderView
+-
+QtWidgets/QLabel
+-
+QtWidgets/QLineEdit
+-
+QtWidgets/QPushButton
+-
+QtWidgets/QSpacerItem
+-
+QtWidgets/QTableWidget
+-
+QtWidgets/QVBoxLayout
 -
 

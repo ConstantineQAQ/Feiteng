@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kylin/Feiteng/build/Feiteng_autogen/mocs_compilation.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/Feiteng_autogen/mocs_compilation.cpp.o"
+  "/home/kylin/Feiteng/src/addstudentdialog.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/addstudentdialog.cpp.o"
   "/home/kylin/Feiteng/src/admindialog.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/admindialog.cpp.o"
   "/home/kylin/Feiteng/src/config.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/config.cpp.o"
   "/home/kylin/Feiteng/src/database.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/database.cpp.o"
@@ -13,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/kylin/Feiteng/src/main.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/main.cpp.o"
   "/home/kylin/Feiteng/src/mainwindow.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/mainwindow.cpp.o"
   "/home/kylin/Feiteng/src/person.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/person.cpp.o"
+  "/home/kylin/Feiteng/src/studeninfodialog.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/studeninfodialog.cpp.o"
   "/home/kylin/Feiteng/src/temperature.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/temperature.cpp.o"
   "/home/kylin/Feiteng/src/thread.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/thread.cpp.o"
   "/home/kylin/Feiteng/src/util.cpp" "/home/kylin/Feiteng/build/CMakeFiles/Feiteng.dir/src/util.cpp.o"

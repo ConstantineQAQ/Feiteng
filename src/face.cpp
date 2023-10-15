@@ -129,6 +129,22 @@ double FaceInfo::getSSIM(cv::Mat img1, cv::Mat img2)
 	return mssim.val[0];
 }
 
+void saveImage(const std::string& label, const cv::Mat& image, int count) {
+    std::string baseDir = "/home/kylin/Feiteng/face/";  // 基础目录
+    std::string labelDir = baseDir + label;  // 为每个标签创建一个目录
+
+    // 检查目录是否存在，如果不存在则创建它
+    if (!std::filesystem::exists(labelDir)) {
+        std::filesystem::create_directories(labelDir);
+    }
+
+    // 构建图像的完整路径
+    std::string imagePath = labelDir + "/" + label + "_" + std::to_string(count) + ".jpg";
+
+    // 保存图像
+    cv::imwrite(imagePath, image);
+}
+
 void FaceInfo::faceRecorde()
 {
     int number = m_config->getFaceSum();
@@ -142,7 +158,7 @@ void FaceInfo::faceRecorde()
                 m_faceROIs.push_back(m_faceROI);
                 FEITENG_LOG_INFO(g_logger) << "录入成功";
                 count++;
-                cv::imwrite("/home/kylin/Feiteng/face" + m_label + "_" + std::to_string(count) + ".jpg", m_faceROI); // 测试用
+                saveImage(m_label, m_faceROI, count);
             } else {
                 // 判断新输入的照片与之前照片的相似度
                 for(int a = 0; a < m_faceROIs.size(); a++) {
@@ -154,7 +170,7 @@ void FaceInfo::faceRecorde()
                         m_faceROIs.push_back(m_faceROI);
                         FEITENG_LOG_INFO(g_logger) << "录入成功";
                         count++;
-                        cv::imwrite("/home/kylin/Feiteng/face" + m_label + "_" + std::to_string(count) + ".jpg", m_faceROI); // 测试用
+                        saveImage(m_label, m_faceROI, count);
                     }
                 }
             }
@@ -201,8 +217,30 @@ void FaceRecognizer::train()
         }
     }
     m_recognizer->train(images, labels);
-    m_recognizer->save("/home/kylin/Feiteng/face_recognizer.xml");
+    m_recognizer->save("/home/kylin/Feiteng/model/face_recognizer.xml");
     FEITENG_LOG_INFO(g_logger) << "训练成功";
+}
+
+void FaceRecognizer::loadFromDir(const std::string & baseDir)
+{
+    for (const auto& entry : std::filesystem::directory_iterator(baseDir)) {
+        if (entry.is_directory()) {
+            std::string label = entry.path().filename().string();
+            FaceInfo::ptr faceInfo = std::make_shared<FaceInfo>(label);
+
+            for (const auto& imageEntry : std::filesystem::directory_iterator(entry.path())) {
+                if (imageEntry.is_regular_file()) {
+                    std::string imagePath = imageEntry.path().string();
+                    cv::Mat image = cv::imread(imagePath, cv::IMREAD_GRAYSCALE);
+                    if (!image.empty()) {
+                        // Assuming you have a method to add individual images to FaceInfo
+                        faceInfo->addFaceROI(image);
+                    }
+                }
+            }
+            m_faceinfos.push_back(std::move(faceInfo));
+        }
+    }
 }
 
 void Camera::openCamera()

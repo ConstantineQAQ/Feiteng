@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <filesystem>
 #include <opencv4/opencv2/opencv.hpp>
 #include <opencv4/opencv2/highgui/highgui.hpp>
 #include <opencv4/opencv2/imgproc/imgproc.hpp>
@@ -115,6 +116,7 @@ public:
     std::vector<cv::Rect> getFaces() const { return m_faces; } 
     std::vector<cv::Mat> getFaceROIs() const { return m_faceROIs; }
     cv::Mat getFaceROI() const { return m_faceROI; }
+    void addFaceROI(cv::Mat faceROI) { m_faceROIs.push_back(faceROI); }
     std::shared_ptr<cv::CascadeClassifier> getFaceCascade() const { return m_face_cascade; } 
     void detectFace(); // 录入一张照片
     virtual ~FaceInfo() {}
@@ -136,6 +138,7 @@ public:
     void addFaceInfo(FaceInfo::ptr faceinfo) { m_faceinfos.push_back(std::move(faceinfo)); }
     cv::Ptr<cv::face::LBPHFaceRecognizer> getRecognizer() const { return m_recognizer; }
     void train(); // 训练
+    void loadFromDir(const std::string& baseDir); // 从目录加载人脸信息
 private:
     cv::Ptr<cv::face::LBPHFaceRecognizer> m_recognizer; // 人脸识别器
     std::vector<FaceInfo::ptr> m_faceinfos; // 人脸信息

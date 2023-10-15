@@ -26,7 +26,6 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-
 class FrameProcessor;
 class MainWindow : public QMainWindow
 {
@@ -37,17 +36,21 @@ public:
     ~MainWindow();
 signals:
     void faceRecognitionDone(int label, double confidence);
+    void TemperDone(double temper);
 private slots:
     void updateFaceLabel(const QImage &image);
     void on_work_pushButton_clicked();
     void handleFaceRecognitionDone(int label, double confidence);
+    void handleTemperatureDone(double temper);
     void on_temper_pushButton_clicked();
     void on_admin_pushButton_clicked();
 
+protected:
+    QThread *m_thread; // 线程
 private:
     void processFaceRecognition();
-    void processTemperature();
     // Q_INVOKABLE void updateFaceResultLabel(int label);
+    AdminDialog *adminDialog;   // 管理员登录窗口
     int count; // 测温次数
     std::vector<double> bodyTempVec; // 体温数据
     Ui::MainWindow *ui;
@@ -55,7 +58,6 @@ private:
     Feiteng::Person::ptr m_person; // 人员信息
     QTimer *Ttimer; // 温度定时器
     QTimer *Ftimer; // 人脸定时器
-    QThread *m_thread; // 线程
     FrameProcessor *m_frameProcessor; // 帧处理器
 };
 

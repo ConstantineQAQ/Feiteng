@@ -13,4 +13,9 @@ Feiteng::Person::Person(std::string name, std::string id, std::string department
     m_temperature = g_body_temp;
 }
 
+Person::Person() {
+    m_face = FaceInfo::ptr(new FaceInfo());
+    m_temperature = g_body_temp;
+}
+
 }

@@ -2,3 +2,276 @@
 2023-10-12 16:06:09	8836	0	[INFO]	[root]	tests/test_config.cpp:28	[FaceConfig faceSum=5 faceSize=100 confidence=70.12 SSIM=0.92 scaleFactor=1.1 minNeighbors=3 facePath=/home/kylin/Feiteng/face]
 2023-10-12 16:06:09	8836	0	[INFO]	[root]	tests/test_config.cpp:29	[SerialConfig port=/dev/ttyUSB0 baudRate=9600 dataBits=8 parity=0 stopBits=1 flowControl=0]
 2023-10-12 16:06:09	8836	0	[INFO]	[root]	tests/test_config.cpp:30	1
+2023-10-13 16:12:15	124939	0	[INFO]	[admindialog]	src/admindialog.cpp:28	账号或密码错误，请重新登录!Driver not loaded Driver not loaded
+2023-10-13 16:17:30	132127	0	[INFO]	[admindialog]	src/admindialog.cpp:27	tempdata->size() = -1
+2023-10-13 16:41:44	156004	0	[INFO]	[admindialog]	src/admindialog.cpp:28	0
+2023-10-13 16:42:15	156004	0	[INFO]	[admindialog]	src/admindialog.cpp:28	0
+2023-10-13 16:47:55	161643	0	[INFO]	[admindialog]	src/admindialog.cpp:31	0
+2023-10-13 16:48:03	161643	0	[INFO]	[admindialog]	src/admindialog.cpp:31	0
+2023-10-13 16:48:12	161643	0	[INFO]	[admindialog]	src/admindialog.cpp:31	0
+2023-10-13 16:48:29	161643	0	[INFO]	[admindialog]	src/admindialog.cpp:31	0
+2023-10-13 16:48:31	161643	0	[INFO]	[admindialog]	src/admindialog.cpp:31	0
+2023-10-13 16:48:38	161643	0	[INFO]	[admindialog]	src/admindialog.cpp:31	0
+2023-10-13 16:51:40	168765	0	[INFO]	[admindialog]	src/admindialog.cpp:23	tes test
+2023-10-13 16:51:45	168765	0	[INFO]	[admindialog]	src/admindialog.cpp:23	test test
+2023-10-13 16:51:53	168765	0	[INFO]	[admindialog]	src/admindialog.cpp:23	test test
+2023-10-13 16:51:55	168765	0	[INFO]	[admindialog]	src/admindialog.cpp:23	test test
+2023-10-13 16:51:56	168765	0	[INFO]	[admindialog]	src/admindialog.cpp:23	test test
+2023-10-13 16:56:43	181852	0	[INFO]	[admindialog]	src/admindialog.cpp:23	test test
+2023-10-13 16:56:44	181852	0	[INFO]	[admindialog]	src/admindialog.cpp:30	0
+2023-10-13 17:02:24	189376	0	[INFO]	[admindialog]	src/admindialog.cpp:23	test test
+2023-10-13 17:02:25	189376	0	[INFO]	[admindialog]	src/admindialog.cpp:30	 
+2023-10-13 17:10:28	202071	0	[ERROR]	[admindialog]	src/admindialog.cpp:24	Basic query failed.
+2023-10-13 17:10:28	202071	0	[INFO]	[admindialog]	src/admindialog.cpp:32	 
+2023-10-13 17:14:04	209214	0	[ERROR]	[admindialog]	src/admindialog.cpp:24	Basic query failed.
+2023-10-13 17:14:04	209214	0	[ERROR]	[admindialog]	src/admindialog.cpp:28	 
+2023-10-13 17:14:04	209214	0	[INFO]	[admindialog]	src/admindialog.cpp:32	 
+2023-10-13 17:42:33	217079	0	[ERROR]	[admindialog]	src/admindialog.cpp:25	 
+2023-10-13 17:42:33	217079	0	[INFO]	[admindialog]	src/admindialog.cpp:29	 
+2023-10-13 17:42:49	217079	0	[ERROR]	[admindialog]	src/admindialog.cpp:25	 
+2023-10-13 17:42:49	217079	0	[INFO]	[admindialog]	src/admindialog.cpp:29	tes tes
+2023-10-13 17:42:55	217079	0	[ERROR]	[admindialog]	src/admindialog.cpp:25	 
+2023-10-13 17:42:55	217079	0	[INFO]	[admindialog]	src/admindialog.cpp:29	test test
+2023-10-13 17:42:59	217079	0	[ERROR]	[admindialog]	src/admindialog.cpp:25	 
+2023-10-13 17:42:59	217079	0	[INFO]	[admindialog]	src/admindialog.cpp:29	test tes
+2023-10-15 13:34:04	4019	0	[ERROR]	[admindialog]	src/admindialog.cpp:25	 
+2023-10-15 13:34:04	4019	0	[INFO]	[admindialog]	src/admindialog.cpp:29	 
+2023-10-15 13:34:23	4019	0	[ERROR]	[admindialog]	src/admindialog.cpp:25	 
+2023-10-15 13:34:23	4019	0	[INFO]	[admindialog]	src/admindialog.cpp:29	test 
+2023-10-15 13:34:27	4019	0	[ERROR]	[admindialog]	src/admindialog.cpp:25	 
+2023-10-15 13:34:27	4019	0	[INFO]	[admindialog]	src/admindialog.cpp:29	test test
+2023-10-15 14:34:52	25870	0	[ERROR]	[admindialog]	src/admindialog.cpp:25	 
+2023-10-15 14:34:52	25870	0	[INFO]	[admindialog]	src/admindialog.cpp:29	test test
+2023-10-15 14:52:21	33346	0	[INFO]	[admindialog]	src/admindialog.cpp:23	 
+2023-10-15 14:52:28	33346	0	[INFO]	[admindialog]	src/admindialog.cpp:23	test test
+2023-10-15 15:02:57	47948	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 15:13:37	62570	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 15:17:48	69899	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 15:25:20	89281	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:25:20	94607	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:25:20	94607	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:25:22	89281	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:25:23	94607	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:25:23	94607	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:25:27	89281	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:25:27	94607	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:25:27	94607	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:25:30	89281	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:25:31	94607	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:25:31	94607	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:25:35	89281	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:25:35	94607	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:25:35	94607	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:28:13	105230	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:28:14	105273	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:28:14	105273	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:28:17	105230	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:28:19	105230	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:28:19	105273	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:28:20	105273	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:31:10	107071	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:31:16	107071	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:31:16	110919	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:31:16	110919	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:31:29	107071	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 15:34:41	116018	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:34:43	116018	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:34:44	119851	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:34:44	119851	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:00	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:01	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:03	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:06	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:08	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:09	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:10	136176	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:58:10	136176	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:12	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:14	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:15	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:16	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:17	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:17	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:17	136176	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:58:17	136176	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:19	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:20	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:21	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:21	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:21	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:21	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:23	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:24	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:24	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:24	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:24	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:24	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:25	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:25	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:25	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:25	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:26	137674	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:58:26	137674	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:28	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:31	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:31	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:31	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:31	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:32	136176	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:58:32	136176	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:33	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:38	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:43	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:44	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:44	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:45	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:45	139167	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:58:45	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:45	139167	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:45	137674	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:58:45	137674	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:46	136176	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:58:46	136176	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:49	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:53	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:53	139167	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:58:53	139167	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:55	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:56	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:58:56	136176	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:58:56	136176	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:58:59	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:02	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:04	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:06	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:07	136176	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:07	136176	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:09	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:09	139166	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:09	139166	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:11	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:12	139167	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:12	139167	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:13	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:14	137674	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:14	137674	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:15	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:16	136176	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:16	136176	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:17	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:20	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:23	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:28	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:28	136176	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:28	136176	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:30	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:30	139166	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:30	139166	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:32	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:33	139167	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:33	139167	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:34	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:37	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:38	136176	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:38	136176	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:39	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:41	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:43	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:44	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:47	132338	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 15:59:47	139166	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 15:59:47	139166	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 15:59:55	132338	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 16:00:04	132338	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:73	要删除的学生ID为：18
+2023-10-15 16:00:08	132338	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:73	要删除的学生ID为：13
+2023-10-15 16:00:11	132338	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:73	要删除的学生ID为：1
+2023-10-15 16:00:13	132338	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:73	要删除的学生ID为：10
+2023-10-15 16:00:16	132338	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:73	要删除的学生ID为：11
+2023-10-15 16:00:37	164585	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:00:39	164585	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:00:39	168418	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 16:00:39	168418	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 16:02:02	179940	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:02:04	179940	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:02:06	179940	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:02:06	183660	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 16:02:06	183660	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 16:02:14	179940	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 16:02:34	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：1
+2023-10-15 16:02:36	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：10
+2023-10-15 16:02:36	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：12
+2023-10-15 16:02:36	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：13
+2023-10-15 16:02:36	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：15
+2023-10-15 16:02:37	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：16
+2023-10-15 16:02:37	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：18
+2023-10-15 16:02:38	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：new_id
+2023-10-15 16:02:40	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：new_id
+2023-10-15 16:02:51	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：new_id
+2023-10-15 16:02:51	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：9
+2023-10-15 16:02:52	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：8
+2023-10-15 16:02:52	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：6
+2023-10-15 16:02:53	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：1
+2023-10-15 16:03:13	179940	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：1
+2023-10-15 16:03:31	179940	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:03:31	188284	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 16:03:31	188284	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 16:03:33	179940	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:03:34	188284	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 16:03:34	188284	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 16:03:36	179940	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:03:38	179940	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:03:50	179940	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:03:51	188284	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 16:03:51	188284	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 16:42:29	200500	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:42:29	204334	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 16:42:29	204334	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 16:42:35	200500	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 16:43:01	200500	0	[ERROR]	[AddStudentDialog]	src/addstudentdialog.cpp:22	学生信息不完全!
+2023-10-15 16:43:18	200500	0	[ERROR]	[AddStudentDialog]	src/addstudentdialog.cpp:22	学生信息不完全!
+2023-10-15 16:43:30	200500	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:43:32	200500	0	[INFO]	[root]	src/mainwindow.cpp:112	调试1
+2023-10-15 16:43:32	213283	0	[INFO]	[root]	src/mainwindow.cpp:99	调试2
+2023-10-15 16:43:33	213283	0	[INFO]	[root]	src/mainwindow.cpp:104	调试3
+2023-10-15 17:52:44	222348	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 17:54:13	235398	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 17:56:01	247830	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 18:05:27	272837	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 18:11:42	284234	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 18:13:14	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：12
+2023-10-15 18:13:15	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：12
+2023-10-15 18:13:15	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：12
+2023-10-15 18:13:28	284234	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 18:14:19	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：1
+2023-10-15 18:14:20	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：10
+2023-10-15 18:14:21	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：12
+2023-10-15 18:14:21	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：13
+2023-10-15 18:14:22	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：14
+2023-10-15 18:14:23	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：15
+2023-10-15 18:14:24	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：16
+2023-10-15 18:14:24	284234	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：17
+2023-10-15 18:19:18	297315	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 18:19:32	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203760
+2023-10-15 18:19:32	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203756
+2023-10-15 18:19:32	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203760
+2023-10-15 18:19:33	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203756
+2023-10-15 18:19:33	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203760
+2023-10-15 18:19:33	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203756
+2023-10-15 18:19:33	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203760
+2023-10-15 18:19:34	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203756
+2023-10-15 18:20:27	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203756
+2023-10-15 18:21:42	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：5
+2023-10-15 18:21:59	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：3
+2023-10-15 18:22:26	297315	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：11
+2023-10-15 20:18:22	5242	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 20:18:32	5242	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203756
+2023-10-15 20:18:32	5242	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203756
+2023-10-15 20:18:33	5242	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203760
+2023-10-15 20:18:33	5242	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203756
+2023-10-15 20:20:00	5242	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 20:20:06	5242	0	[INFO]	[studeninfodialog]	src/studeninfodialog.cpp:72	要删除的学生ID为：20203753
+2023-10-15 20:38:25	4122	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 20:39:07	13948	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 20:47:07	25651	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 20:51:14	37298	0	[INFO]	[admindialog]	src/admindialog.cpp:24	test test
+2023-10-15 22:20:47	26201	0	[INFO]	[admindialog]	src/admindialog.cpp:25	test test

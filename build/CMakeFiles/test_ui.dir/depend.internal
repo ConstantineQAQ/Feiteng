@@ -4,6 +4,7 @@
 CMakeFiles/test_ui.dir/test_ui_autogen/mocs_compilation.cpp.o
  /home/kylin/Feiteng/build/test_ui_autogen/mocs_compilation.cpp
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
+ /home/kylin/Feiteng/include/addstudentdialog.h
  /home/kylin/Feiteng/include/admindialog.h
  /home/kylin/Feiteng/include/config.h
  /home/kylin/Feiteng/include/database.h
@@ -13,12 +14,14 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /home/kylin/Feiteng/include/mainwindow.h
  /home/kylin/Feiteng/include/person.h
  /home/kylin/Feiteng/include/singleton.h
+ /home/kylin/Feiteng/include/studeninfodialog.h
  /home/kylin/Feiteng/include/temperature.h
  /home/kylin/Feiteng/include/thread.h
  /home/kylin/Feiteng/include/util.h
  /home/kylin/Feiteng/tests/test_ui.cpp
  /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/QtConcurrent
  /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/QtConcurrentDepends
+ /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/QtConcurrentRun
  /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrent_global.h
  /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrentcompilertest.h
  /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrentexception.h
@@ -38,6 +41,7 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QByteArray
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QDateTime
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+ /usr/include/aarch64-linux-gnu/qt5/QtCore/QString
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
  /usr/include/aarch64-linux-gnu/qt5/QtCore/QTimer
@@ -302,8 +306,10 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtSql/qtsqlversion.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QApplication
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QDialog
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QFrame
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QGridLayout
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHBoxLayout
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHeaderView
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLineEdit
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QMainWindow
@@ -312,6 +318,8 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QPushButton
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QSpacerItem
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QStatusBar
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QTableWidget
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QTableWidgetItem
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QVBoxLayout
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QWidget
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qabstractbutton.h
@@ -329,6 +337,7 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qdialog.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qframe.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qgridlayout.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qheaderview.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qitemdelegate.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlabel.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlayout.h
@@ -347,9 +356,13 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qstyle.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qstyleoption.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtabbar.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtableview.h
+ /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtablewidget.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtabwidget.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
  /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qwidget.h
+ Feiteng_autogen/include/ui_addstudentdialog.h
  Feiteng_autogen/include/ui_admindialog.h
  Feiteng_autogen/include/ui_mainwindow.h
+ Feiteng_autogen/include/ui_studeninfodialog.h

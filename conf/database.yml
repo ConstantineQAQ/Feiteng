@@ -5,3 +5,9 @@ databases:
     hostname: localhost
     type: QMYSQL
     database: admindatabase
+  - name: info
+    username: kylin
+    passwd: kylin
+    hostname: localhost
+    type: QMYSQL
+    database: studentdatabase

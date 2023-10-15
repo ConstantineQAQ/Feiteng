@@ -61,6 +61,7 @@ public:
     ~MySQLStmtRes();
     bool isValid() const override { return m_query.isValid(); }
     QString lastError() const override { return m_query.lastError().text(); }
+    
     int getDataCount() override { return m_query.size(); }
     int getColumnCount() override { return m_query.record().count(); }
     int getColumnBytes(int idx) override { return m_query.record().field(idx).length(); }
@@ -74,14 +75,8 @@ public:
     bool next() override { return m_query.next(); }
 private:
     MySQLStmtRes(std::shared_ptr<MySQLStmt> stmt): m_stmt(stmt) {}
-    struct Data {
-        bool is_null;
-        bool error;
-        QVariant value;
-    };
     QSqlQuery m_query;
     std::shared_ptr<MySQLStmt> m_stmt;
-    std::vector<Data> m_datas;
 };
 
 class MySQLManager;
@@ -103,6 +98,7 @@ public:
     ISQLData::ptr query(const std::string& sql) override;
 
     QSqlDatabase& getDB() { return m_db; }
+    QSqlQuery& getQuery() { return m_query; }
     IStmt::ptr prepare(const QString& stmt) override;
     int getErrno() override;
     QString getErrStr() override;

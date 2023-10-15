@@ -140,28 +140,14 @@ MySQLStmtRes::ptr MySQLStmtRes::Create(std::shared_ptr<MySQLStmt> stmt)
         FEITENG_LOG_ERROR(g_logger) << "stmt= " << query.lastQuery().toStdString() << " error: " << query.lastError().text().toStdString();
         return nullptr;
     }
-
-    int numFields = query.record().count();
-    rt->m_datas.resize(numFields);
-    // 获取字段名
-    while (query.next()) {
-        QSqlRecord record = query.record();
-        for (int i = 0; i < numFields; i++) {
-            QSqlField field = record.field(i);
-            Data data;
-            data.is_null = field.isNull();
-            data.error = false;  // Set error flag based on your error handling logic
-            data.value = field.value();
-            rt->m_datas[i] = data;
-        }
-    }
+    rt->m_query = query;
     return rt;
 }
 MySQLStmtRes::~MySQLStmtRes(){}
 MySQLStmt::ptr MySQLStmt::Create(MySQL::ptr db, const QString &stmt)
 {
     MySQLStmt::ptr rt(new MySQLStmt(db));
-    QSqlQuery query(db->getDB());
+    QSqlQuery query = QSqlQuery(db->getDB());
 
     // 准备SQL语句
     if (!query.prepare(stmt)) {

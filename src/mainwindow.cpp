@@ -1,8 +1,9 @@
 #include "mainwindow.h"
 
 static Feiteng::Logger::ptr g_logger = FEITENG_LOG_NAME("mainwindow");
-Feiteng::MySQL::ptr g_mysql = FEITENG_MYSQL_NAME("feiteng");
+Feiteng::MySQL::ptr g_mysql = FEITENG_MYSQL_NAME("info");
 Feiteng::Serial::ptr g_serial = FEITENG_SERIAL_NAME("wendu");
+Feiteng::FaceRecognizer::ptr g_face_recognizer = std::make_shared<Feiteng::FaceRecognizer>();
 extern Feiteng::FaceConfig::ptr g_face_config;
 QMetaObject::Connection connection;
 QMetaObject::Connection connection2;
@@ -20,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     , m_face(Feiteng::FaceInfo::ptr(new Feiteng::FaceInfo()))
     , m_thread(new QThread(this))
     , m_frameProcessor(new FrameProcessor())
+    , adminDialog(new AdminDialog(this))
 {
     ui->setupUi(this);
     Feiteng::Config::LoadFromYaml(facenode);
@@ -27,18 +29,25 @@ MainWindow::MainWindow(QWidget *parent)
     Feiteng::Config::LoadFromYaml(databasenode);
     Feiteng::Config::LoadFromYaml(lognode);
     Feiteng::Config::LoadFromYaml(tempernode);
-    g_mysql->connect(); // 连接数据库
+    if (g_mysql->connect()) {
+        FEITENG_LOG_INFO(g_logger) << "数据库连接成功";
+    } else {
+        FEITENG_LOG_ERROR(g_logger) << "数据库连接失败";
+    }
     connect(m_frameProcessor, &FrameProcessor::frameProcessed, this, &MainWindow::updateFaceLabel);
     connect(this, &MainWindow::faceRecognitionDone, this, &MainWindow::handleFaceRecognitionDone);
-    Ftimer->start(33);
+    connect(this, &MainWindow::TemperDone, this, &MainWindow::handleTemperatureDone);
+    connect(adminDialog, &AdminDialog::backButtonClicked, this, [this]{
+        FEITENG_CAMERA_OPEN();
+        m_thread->start();
+    });
+    Ftimer->start(50);
     m_frameProcessor->setFaceInfo(m_face);
     m_frameProcessor->moveToThread(m_thread);
     connect(Ftimer, SIGNAL(timeout()), m_frameProcessor, SLOT(processFrame()));
     m_thread->start();
     FEITENG_CAMERA_OPEN(); // 打开摄像头
 }
-
-
 
 MainWindow::~MainWindow()
 {
@@ -54,15 +63,30 @@ void MainWindow::updateFaceLabel(const QImage &image)
 
 void MainWindow::handleFaceRecognitionDone(int label, double confidence)
 {
-    FEITENG_LOG_INFO(g_logger) << "开始人脸识别4";
     m_person = nullptr;
     if(confidence < 0) {
         QMessageBox::warning(this, "签到提醒", "未检测到人脸，请重新签到!");
+        FEITENG_LOG_ERROR(g_logger) << "未检测到人脸，请重新签到!";
         return;
     }
-    // std::string name = g_mysql->query("select name from person where id = " + std::to_string(label));
-    // std::string department = g_mysql->query("select department from person where id = " + std::to_string(label));
-    m_person = Feiteng::Person::ptr(new Feiteng::Person("王亚宁", "20203760", "微电子与通信工程学院"));
+    Feiteng::MySQLStmt::ptr tempstmt = Feiteng::MySQLStmt::Create(g_mysql, "select * from Student where id = ?");
+    tempstmt->bindString(0, std::to_string(label));
+    Feiteng::ISQLData::ptr tempdata = tempstmt->query();
+    FEITENG_LOG_INFO(g_logger) << "查询到的数据条数为：" << tempdata->getDataCount();
+    if(tempdata->getDataCount() > 0) {
+        if (tempdata->next()) {
+            FEITENG_LOG_INFO(g_logger) << "查询到的数据为：" << tempdata->getValue(0).toString().toStdString() << " " << tempdata->getValue(1).toString().toStdString() << " " << tempdata->getValue(2).toString().toStdString() << " " << tempdata->getValue(3).toString().toStdString();
+            m_person = Feiteng::Person::ptr(new Feiteng::Person());
+            m_person->setId(tempdata->getValue(0).toString().toStdString());
+            m_person->setName(tempdata->getValue(1).toString().toStdString());
+            m_person->setDepartment(tempdata->getValue(2).toString().toStdString());
+            m_person->setPhotoPath(tempdata->getValue(3).toString().toStdString());
+        }
+    } else {
+        QMessageBox::warning(this, "签到提醒", "未查询到相关人员信息，请重新签到!");
+        FEITENG_LOG_ERROR(g_logger) << "未查询到相关人员信息，请重新签到!";
+        return;
+    }
     ConfirmDialog dialog(
         QString("签到成功，签到人员信息为：\n姓名：%1\n学号：%2\n学院：%3")
         .arg(QString::fromStdString(m_person->getName()))
@@ -74,19 +98,32 @@ void MainWindow::handleFaceRecognitionDone(int label, double confidence)
     dialog.setFixedSize(300, 200);    // 设置弹窗为固定大小
     if (dialog.exec() == QDialog::Accepted) {
         // 用户确认签到，执行相应的逻辑，例如更新数据库
-        // g_mysql->execute("update person set status = 1 where id = " + std::to_string(label));
+        g_mysql->execute("update Attendance set SignedToday = 1 , LastSignDate = now() where StudentID = " + std::to_string(label));
     } else {
         // 用户返回，执行相应的逻辑，例如重新采集图像
         return;
     }
 }
 
+void MainWindow::handleTemperatureDone(double temper)
+{
+    TemperDialog dialog(QString("测量到的体温平均值为：%1").arg(temper), this);  // 传递测量到的体温平均值到弹窗
+    dialog.setWindowTitle("确认测量温度信息");  // 设置弹窗标题
+    dialog.setFixedSize(300, 200);    // 设置弹窗为固定大小
+    if (dialog.exec() == QDialog::Accepted) {
+        // 用户确认签到，执行相应的逻辑，例如更新数据库
+        Feiteng::MySQLStmt::ptr tempstmt = Feiteng::MySQLStmt::Create(g_mysql, "update Attendance set Temperature = ? where StudentID = ?");
+        tempstmt->bindDouble(0, temper);
+        tempstmt->bindString(1, m_person->getId());
+        tempstmt->execute();
+    } else {
+
+    }
+}
+
 void MainWindow::processFaceRecognition()
 {
-    FEITENG_LOG_INFO(g_logger) << "开始人脸识别1";
-    // m_face->setLabel("20203760");
     m_face->detectFace();
-    FEITENG_LOG_INFO(g_logger) << "开始人脸识别2";
     Feiteng::FaceRecognizer::ptr face_recognizer = Feiteng::FaceRecognizer::ptr(new Feiteng::FaceRecognizer());
     face_recognizer->getRecognizer()->read("../model/face_recognizer.xml");
     // face_recognizer->train();
@@ -96,7 +133,12 @@ void MainWindow::processFaceRecognition()
     emit faceRecognitionDone(face_predict->getLabel(), face_predict->getConfidence());
 }
 
-void MainWindow::processTemperature()
+void MainWindow::on_work_pushButton_clicked()
+{
+    QtConcurrent::run(this, &MainWindow::processFaceRecognition);
+}
+
+void MainWindow::on_temper_pushButton_clicked()
 {
     // 断开现有的连接
     QObject::disconnect(connection);
@@ -134,15 +176,7 @@ void MainWindow::processTemperature()
                 }
                 double average = sum / bodyTempVec.size();
                 FEITENG_LOG_INFO(g_logger) << "测量到的体温平均值为：" << average;
-                TemperDialog dialog(QString("测量到的体温平均值为：%1").arg(average), this);  // 传递测量到的体温平均值到弹窗
-                dialog.setWindowTitle("确认测量温度信息");  // 设置弹窗标题
-                dialog.setFixedSize(300, 200);    // 设置弹窗为固定大小
-                if (dialog.exec() == QDialog::Accepted) {
-                    // 用户确认签到，执行相应的逻辑，例如更新数据库
-                    // g_mysql->execute("update person set status = 1 where id = " + std::to_string(label)
-                } else {
-
-                }
+                emit TemperDone(average);
             }
         });
         connection2 = QObject::connect(g_serial->getSerial(), &QSerialPort::readyRead, this, [bodyTempPtr,this]() {
@@ -158,21 +192,12 @@ void MainWindow::processTemperature()
     }
 }
 
-void MainWindow::on_work_pushButton_clicked()
-{
-    QtConcurrent::run(this, &MainWindow::processFaceRecognition);
-}
-
-void MainWindow::on_temper_pushButton_clicked()
-{
-    QtConcurrent::run(this, &MainWindow::processTemperature);
-}
-
 void MainWindow::on_admin_pushButton_clicked()
 {
-    AdminDialog dialog(this);
     FEITENG_CAMERA_CLOSE();
-    dialog.exec();
+    m_thread->quit();
+    adminDialog->setWindowTitle("管理员登录");
+    adminDialog->exec();
 }
 
 void FrameProcessor::processFrame() {

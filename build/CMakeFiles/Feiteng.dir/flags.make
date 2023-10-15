@@ -8,6 +8,8 @@ CXX_DEFINES = -DFeiteng_EXPORTS -DQT_CORE_LIB -DQT_GUI_LIB -DQT_SERIALPORT_LIB -
 
 CXX_INCLUDES = -I/home/kylin/Feiteng/build -I/home/kylin/Feiteng -I/home/kylin/Feiteng/build/Feiteng_autogen/include -I/home/kylin/Feiteng/include -I/usr/include/yaml-cpp -isystem /usr/include/aarch64-linux-gnu/qt5 -isystem /usr/include/aarch64-linux-gnu/qt5/QtCore -isystem /usr/lib/aarch64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/aarch64-linux-gnu/qt5/QtGui -isystem /usr/include/aarch64-linux-gnu/qt5/QtWidgets -isystem /usr/include/aarch64-linux-gnu/qt5/QtSql -isystem /usr/include/aarch64-linux-gnu/qt5/QtSerialPort -isystem /usr/local/include/opencv4 
 
+# Custom defines: CMakeFiles/Feiteng.dir/src/addstudentdialog.cpp.o_DEFINES = __FILE__="src/addstudentdialog.cpp"
+
 # Custom defines: CMakeFiles/Feiteng.dir/src/admindialog.cpp.o_DEFINES = __FILE__="src/admindialog.cpp"
 
 # Custom defines: CMakeFiles/Feiteng.dir/src/config.cpp.o_DEFINES = __FILE__="src/config.cpp"
@@ -23,6 +25,8 @@ CXX_INCLUDES = -I/home/kylin/Feiteng/build -I/home/kylin/Feiteng -I/home/kylin/F
 # Custom defines: CMakeFiles/Feiteng.dir/src/mainwindow.cpp.o_DEFINES = __FILE__="src/mainwindow.cpp"
 
 # Custom defines: CMakeFiles/Feiteng.dir/src/person.cpp.o_DEFINES = __FILE__="src/person.cpp"
+
+# Custom defines: CMakeFiles/Feiteng.dir/src/studeninfodialog.cpp.o_DEFINES = __FILE__="src/studeninfodialog.cpp"
 
 # Custom defines: CMakeFiles/Feiteng.dir/src/temperature.cpp.o_DEFINES = __FILE__="src/temperature.cpp"
 

@@ -3,6 +3,7 @@
 
 CMakeFiles/test_ui.dir/test_ui_autogen/mocs_compilation.cpp.o: test_ui_autogen/mocs_compilation.cpp
 
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/addstudentdialog.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/admindialog.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/config.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/database.h
@@ -12,12 +13,14 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/log.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/mainwindow.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/person.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/singleton.h
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/studeninfodialog.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/temperature.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/thread.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../include/util.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: ../tests/test_ui.cpp
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/QtConcurrent
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/QtConcurrentDepends
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/QtConcurrentRun
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrent_global.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrentcompilertest.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtConcurrent/qtconcurrentexception.h
@@ -37,6 +40,7 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/Q
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtCore/QByteArray
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtCore/QDateTime
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtCore/QObject
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtCore/QString
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtCore/QStringList
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtCore/QThread
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtCore/QTimer
@@ -301,8 +305,10 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/Q
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtSql/qtsqlversion.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QApplication
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QDialog
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QFrame
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QGridLayout
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHBoxLayout
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QHeaderView
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QLineEdit
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QMainWindow
@@ -311,6 +317,8 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/Q
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QPushButton
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QSpacerItem
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QStatusBar
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QTableWidget
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QTableWidgetItem
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QVBoxLayout
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/QWidget
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qabstractbutton.h
@@ -328,6 +336,7 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/Q
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qdialog.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qframe.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qgridlayout.h
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qheaderview.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qitemdelegate.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlabel.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qlayout.h
@@ -346,10 +355,14 @@ CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/Q
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qstyle.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qstyleoption.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtabbar.h
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtableview.h
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtablewidget.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtabwidget.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: /usr/include/aarch64-linux-gnu/qt5/QtWidgets/qwidget.h
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: Feiteng_autogen/include/ui_addstudentdialog.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: Feiteng_autogen/include/ui_admindialog.h
 CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: Feiteng_autogen/include/ui_mainwindow.h
+CMakeFiles/test_ui.dir/tests/test_ui.cpp.o: Feiteng_autogen/include/ui_studeninfodialog.h
 
