@@ -78,9 +78,9 @@ Thumbs.db
 
 
 /lib
-/build
 /face
 /log
+/build
 
 # qtcreator generated files
 *.pro.user*
