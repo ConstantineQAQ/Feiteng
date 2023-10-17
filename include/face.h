@@ -45,7 +45,7 @@ typedef Singleton<Camera> CameraMgr;
 class FaceConfig {
 public:
     typedef std::shared_ptr<FaceConfig> ptr;
-    FaceConfig(double confidence = 0.8, double SSIM = 0.8, int faceSum = 10
+    FaceConfig(double confidence = 80, double SSIM = 0.8, int faceSum = 10
                 , int faceSize = 100, double scaleFactor = 1.1, int minNeighbors = 3
                 , std::string facePath = "./face/"): m_confidence(confidence)
                 , m_SSIM(SSIM), m_faceSum(faceSum), m_faceSize(faceSize)

@@ -30,3 +30,21 @@ logs:
     - type: FileLogAppender
       file: /home/kylin/Feiteng/log/temperature.log
     - type: StdoutLogAppender
+  - name: addstudentdialog
+    level: debug
+    appenders:
+    - type: FileLogAppender
+      file: /home/kylin/Feiteng/log/addstudentdialog.log
+    - type: StdoutLogAppender
+  - name: admindialog
+    level: debug
+    appenders:
+    - type: FileLogAppender
+      file: /home/kylin/Feiteng/log/admindialog.log
+    - type: StdoutLogAppender
+  - name: studeninfodialog
+    level: debug
+    appenders:
+    - type: FileLogAppender
+      file: /home/kylin/Feiteng/log/studeninfodialog.log
+    - type: StdoutLogAppender

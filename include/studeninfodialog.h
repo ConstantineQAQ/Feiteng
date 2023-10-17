@@ -26,12 +26,15 @@ public:
     void queryAndDisplay();  // 用于查询和显示结果
 
 private slots:
-    void on_deleteButton_clicked();
     void on_tableWidget_itemClicked(QTableWidgetItem *item);
 
     void on_add_PushButton_clicked();
 
     void on_train_pushButton_clicked();
+
+    void on_delete_PushButton_clicked();
+
+    void on_yaml_pushButton_clicked();
 
 private:
     Ui::StudenInfoDialog *ui;

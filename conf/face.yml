@@ -1,5 +1,5 @@
 face:
-  confidence: 70.12
+  confidence: 100
   ssim: 0.92
   face_sum: 5
   face_size: 100

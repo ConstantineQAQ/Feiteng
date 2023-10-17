@@ -29,6 +29,7 @@ MainWindow::MainWindow(QWidget *parent)
     Feiteng::Config::LoadFromYaml(databasenode);
     Feiteng::Config::LoadFromYaml(lognode);
     Feiteng::Config::LoadFromYaml(tempernode);
+    m_face->setConfig(g_face_config);
     if (g_mysql->connect()) {
         FEITENG_LOG_INFO(g_logger) << "数据库连接成功";
     } else {
@@ -67,6 +68,10 @@ void MainWindow::handleFaceRecognitionDone(int label, double confidence)
     if(confidence < 0) {
         QMessageBox::warning(this, "签到提醒", "未检测到人脸，请重新签到!");
         FEITENG_LOG_ERROR(g_logger) << "未检测到人脸，请重新签到!";
+        return;
+    }else if(confidence > m_face->getConfig()->getConfidence()) {
+        QMessageBox::warning(this, "签到提醒", "未查询到相关人员信息，请重新签到!");
+        FEITENG_LOG_ERROR(g_logger) << "未查询到相关人员信息，请重新签到!";
         return;
     }
     Feiteng::MySQLStmt::ptr tempstmt = Feiteng::MySQLStmt::Create(g_mysql, "select * from Student where id = ?");
