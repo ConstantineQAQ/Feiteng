@@ -1,3 +1,5 @@
+
+
 # 飞腾校企联合育人项目
 ## 项目简介
 使用opencv + Qt + mysql完成一个人脸识别和温度检测的项目
@@ -103,7 +105,7 @@ singleton<Camera>
         face_size: 100
         scale_factor: 1.1
         min_neighbors: 3    
-        face_path: /home/kylin/kylin/face
+        face_path: /home/kylin/Feiteng/face
  * 与Face类是一对一的关系
 */
 class FaceConfig
